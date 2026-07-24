@@ -1,37 +1,64 @@
-// 1. Replicating Reference Image Products with 3x Price Calculation Multipliers applied
+// 1. Updated Database Master Array (Featuring Your Extracted Reference Products)
 const initialProducts = [
     {
         id: 1,
-        name: "The Advanced Wellness Bundle",
-        originalPrice: 170.00,
-        myPrice: 510.00, // 170.00 * 3
-        image: "https://unsplash.com",
-        category: "Bundles",
-        description: "Complete strategic multi-bottle premium systemic internal wellness preparation setup tracker."
+        name: "Butterfly Pea Tea",
+        originalPrice: 15.00,
+        myPrice: 45.00, // 15.00 * 3 markup
+        image: "https://houseofbastet.shop",
+        category: "Teas",
+        description: "Vibrant premium sun-dried blue flower petals designed to boost memory and clear internal channels."
     },
     {
         id: 2,
-        name: "Irish Sea Moss (Raw Blend)",
+        name: "Irish Sea Moss",
         originalPrice: 20.00,
-        myPrice: 60.00, // 20.00 * 3
-        image: "https://unsplash.com",
+        myPrice: 60.00, // 20.00 * 3 markup
+        image: "https://houseofbastet.shop",
         category: "Supplements",
-        description: "Premium sun-dried cell food compound containing high minerals."
+        description: "Organic wildcrafted gold ocean vegetation packed with essential cellular micronutrients."
     },
     {
         id: 3,
-        name: "Soursop 7 Archangels Tonic",
-        originalPrice: 40.00,
-        myPrice: 120.00, // 40.00 * 3
-        image: "https://unsplash.com",
+        name: "Organic Blue Lotus",
+        originalPrice: 25.00,
+        myPrice: 75.00, // 25.00 * 3 markup
+        image: "https://houseofbastet.shop",
+        category: "Herbs",
+        description: "Sustainably harvested Egyptian Blue Lotus petals to induce somatic calm and support deep meditation."
+    },
+    {
+        id: 4,
+        name: "Soursop Leaves (Dried)",
+        originalPrice: 20.00,
+        myPrice: 60.00, // Estimated base 20.00 * 3 markup
+        image: "https://houseofbastet.shop",
+        category: "Herbs",
+        description: "Hand-selected premium soursop leaves optimized for clearing toxicities from the blood."
+    },
+    {
+        id: 5,
+        name: "Elderberries Whole",
+        originalPrice: 25.00,
+        myPrice: 75.00, // Estimated base 25.00 * 3 markup
+        image: "https://houseofbastet.shop",
+        category: "Herbs",
+        description: "Pure whole elderberries providing structural immune support and natural seasonal protection."
+    },
+    {
+        id: 6,
+        name: "Sea Moss 5 lb Bulk Bags",
+        originalPrice: 150.00,
+        myPrice: 300.00, // 150.00 * 2 strategy for bulk pricing safety
+        image: "https://houseofbastet.shop",
         category: "Supplements",
-        description: "Potent deep fluid extract designed for organic protection."
+        description: "Master wholesale supply bag of gold raw Irish moss for long-term health sanctuary tracking."
     }
 ];
 
 const defaultReviews = [
-    { name: "Malik K.", rating: 5, text: "The Advanced Wellness Bundle completely transformed my baseline focus thresholds." },
-    { name: "Elena R.", rating: 5, text: "Authentic, raw herbs. Fast execution tracking via email updates." }
+    { name: "Malik K.", rating: 5, text: "The Butterfly Pea Tea turns an incredible blue and completely cleared my morning brain fog." },
+    { name: "Elena R.", rating: 5, text: "Excellent shipping updates on the bulk 5 lb Sea Moss bag. Top-tier quality." }
 ];
 
 let activeDiscountMultiplier = 1.0; 
@@ -41,15 +68,14 @@ let currentReviews = JSON.parse(localStorage.getItem('orion_reviews')) || defaul
 
 function displayHomepageProducts() {
     const productGrid = document.getElementById('products');
-    if (!productGrid) return;
-    productGrid.innerHTML = "";
+    if (!productGrid) return; productGrid.innerHTML = "";
 
     const itemsToDisplay = currentCategoryFilter === "All" 
         ? currentInventory 
-        : currentInventory.filter(p => p.category === currentCategoryFilter);
+        : currentInventory.filter(p => p.category.toLowerCase() === currentCategoryFilter.toLowerCase());
 
     if (itemsToDisplay.length === 0) {
-        productGrid.innerHTML = `<p style="grid-column: 1/-1; padding: 20px; text-align:center; color:#999;">No items currently listed under this tier configuration.</p>`;
+        productGrid.innerHTML = `<p style="grid-column: 1/-1; padding: 40px; text-align:center; color:#999;">No items currently listed under this tier configuration.</p>`;
         return;
     }
 
@@ -61,8 +87,9 @@ function displayHomepageProducts() {
 
         const productCard = `
             <div class="product-card">
-                <img src="${product.image}" alt="${product.name}" class="product-image">
+                <img src="${product.image}" alt="${product.name}" class="product-image" onerror="this.src='https://unsplash.com'">
                 <h3 class="product-title"><strong>${product.name}</strong></h3>
+                <p style="font-size: 0.8rem; color: #777; margin-bottom: 10px; line-height:1.3;">${product.description}</p>
                 <p class="product-price">${priceDisplay}</p>
                 <button class="add-to-cart-btn" onclick="redirectToEmail('${product.name}', ${finalPrice})">Order via Email</button>
             </div>
@@ -134,7 +161,7 @@ if (regForm) {
         const data = { name: document.getElementById('reg-name').value };
         localStorage.setItem('orion_user', JSON.stringify(data));
         alert("Account processing initialized!");
-        document.getElementById('nav-auth-btn').innerText = `Peace, ${data.name.split(' ')[0]}`;
+        document.getElementById('nav-auth-btn').innerText = `Peace, ${data.name.split(' ')}`;
         switchAuthMode('login');
     });
 }
@@ -142,5 +169,5 @@ if (regForm) {
 window.onload = function() {
     displayHomepageProducts(); displayCommunityReviews();
     const u = JSON.parse(localStorage.getItem('orion_user'));
-    if (u) document.getElementById('nav-auth-btn').innerText = `Peace, ${u.name.split(' ')[0]}`;
+    if (u) document.getElementById('nav-auth-btn').innerText = `Peace, ${u.name.split(' ')}`;
 };
