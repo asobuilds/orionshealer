@@ -1,4 +1,4 @@
-// 1. Updated Catalog Array Featuring Clean, Publicly accessible Image Streams
+// Expanded 14-Item Database Featuring High-Definition Open-Source Visuals
 const initialProducts = [
     {
         id: 1,
@@ -79,6 +79,38 @@ const initialProducts = [
         image: "https://unsplash.com",
         category: "Personal Care",
         description: "Pure steam-distilled organic rose water fluid to clear skin properties and elevate mood attributes."
+    },
+    {
+        id: 11,
+        name: "Ritual Small Cauldron",
+        myPrice: 120.00,
+        image: "https://unsplash.com",
+        category: "Miscellaneous",
+        description: "Heavy solid iron casting vessel designed for burning sacred resins, protective sage, and altar items safely."
+    },
+    {
+        id: 12,
+        name: "Pure Menthol Crystals",
+        myPrice: 30.00,
+        image: "https://unsplash.com",
+        category: "Personal Care",
+        description: "100% natural, intensely aromatic menthol cooling crystal extractions to clear respiratory pathways completely."
+    },
+    {
+        id: 13,
+        name: "Carved Wood Elephant Artifact",
+        myPrice: 60.00,
+        image: "https://unsplash.com",
+        category: "Miscellaneous",
+        description: "Intricately finished premium solid dark wood elephant figurine to channel protection, stability, and luck."
+    },
+    {
+        id: 14,
+        name: "Shiva Shilajit Resin Matrix",
+        myPrice: 90.00,
+        image: "https://unsplash.com",
+        category: "Supplements",
+        description: "High-vibrational Himalayan fulvic acid compound engineered to boost baseline stamina and physical energy levels."
     }
 ];
 
@@ -111,9 +143,12 @@ function displayHomepageProducts() {
             ? `<span style="text-decoration: line-through; color: #999; font-size: 0.85rem; font-weight:400; margin-right: 8px;">$${Number(product.myPrice).toFixed(2)}</span>$${finalPrice.toFixed(2)}`
             : `$${Number(product.myPrice).toFixed(2)}`;
 
+        // Force browser cache clearance using a timestamp parameter append mechanism
+        const safeImageSrc = `${product.image}&cb=${Date.now()}`;
+
         const productCard = `
             <div class="product-card">
-                <img src="${product.image}" alt="${product.name}" class="product-image" onerror="this.src='https://unsplash.com'">
+                <img src="${safeImageSrc}" alt="${product.name}" class="product-image" onerror="this.src='https://unsplash.com'">
                 <h3 class="product-title"><strong>${product.name}</strong></h3>
                 <p style="font-size: 0.8rem; color: #777; margin-bottom: 10px; line-height:1.3;">${product.description}</p>
                 <p class="product-price">${priceDisplay}</p>
@@ -193,7 +228,7 @@ if (regForm) {
 }
 
 window.onload = function() {
-    // Reset any old hotlinked cache values from browser storage
+    // Overwrite and clear any bad references left in local hardware memory
     localStorage.removeItem('orion_inventory');
     currentInventory = initialProducts;
     
