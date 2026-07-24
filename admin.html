@@ -3,75 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orion's Healer | Sanctuary Sanctuary Inventory Admin</title>
+    <title>Orion's Healer | Master Inventory Control</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body style="background-color: #faf9f6;">
 
-    <!-- Admin Navigation Header -->
-    <header class="site-header">
-        <div class="logo" style="color: #2b2b2b;">ORION'S ADMIN</div>
-        <nav class="main-nav">
-            <a href="index.html">View Live Store</a>
-        </nav>
-    </header>
+    <!-- Secure Password Access Modal Intercept Layer -->
+    <div id="admin-auth-lockout-modal" class="cart-drawer-overlay" style="background-color: #ffffff; justify-content: center; align-items: center; width: 100%; height: 100%;">
+        <div class="auth-box" style="max-width: 400px; width: 90%;">
+            <h2 style="font-size: 1.4rem; font-weight: bold; margin-bottom: 10px;">Admin Authentication Gate</h2>
+            <p class="auth-subtitle">Enter your private sanctuary key code to unlock settings</p>
+            <input type="password" id="admin-secret-pass-key" placeholder="Enter Admin Password" class="auth-input" style="text-align: center;">
+            <button onclick="verifyAdminGatewayPasskey()" class="auth-submit-btn">Unlock Dashboard</button>
+            <p id="admin-auth-error-msg" style="color: red; font-size: 0.85rem; margin-top: 10px; font-weight: bold;"></p>
+        </div>
+    </div>
 
-    <main class="store-container">
-        <h1 style="margin-bottom: 10px;">Inventory Control Dashboard</h1>
-        <p style="text-align: center; color: #8c7355; margin-bottom: 40px;">Add, modify, or remove products from your public storefront.</p>
+    <!-- Protected Real Dashboard View Container (Hidden behind modal layer) -->
+    <div id="master-admin-dashboard-view" class="hidden">
+        <header class="site-header">
+            <div class="logo" style="font-weight: bold; font-size: 1.4rem;">ORION'S ADMIN PANEL</div>
+            <nav class="main-nav">
+                <a href="index.html" style="text-decoration: underline; color: #2b70c9;">View Live Store</a>
+            </nav>
+        </header>
 
-        <!-- Product Management Form Section -->
-        <section class="auth-container" style="max-width: 600px; margin-bottom: 50px;">
-            <div class="auth-box">
-                <h2 id="form-title">Create New Product Listing</h2>
-                <p class="auth-subtitle">Fill out the detailed product parameters below</p>
-                
-                <form id="admin-product-form">
-                    <!-- Hidden input field to track if we are editing an existing item -->
-                    <input type="hidden" id="product-id">
+        <main class="store-container" style="max-width: 1000px; margin: 40px auto; padding: 0 20px;">
+            <h1 style="text-align: center; margin-bottom: 30px; font-size: 2rem;">Inventory Management Panel</h1>
 
-                    <input type="text" id="prod-name" placeholder="Product Name (e.g., Ceremonial Sage)" required class="auth-input">
-                    <input type="text" id="prod-category" placeholder="Category (e.g., Supplements, Incense)" required class="auth-input">
-                    
-                    <div style="display: flex; gap: 15px;">
-                        <input type="number" id="prod-original-price" placeholder="Supplier Price ($)" required class="auth-input" step="0.01">
-                        <input type="number" id="prod-my-price" placeholder="Your Retail Price ($)" required class="auth-input" step="0.01" readonly style="background-color: #eae6e1; cursor: not-allowed;">
-                    </div>
-                    <small style="display: block; text-align: left; color: #8c7355; margin-top: -10px; margin-bottom: 15px;">* System auto-calculates your 3x multiplier profit tier automatically.</small>
+            <!-- Inventory Table List -->
+            <section class="auth-box" style="text-align: left; background: white; padding: 25px; border: 1px solid #eee;">
+                <h3 style="margin-bottom: 15px; font-size: 1.2rem;">Current Live Stock</h3>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                        <thead>
+                            <tr style="background-color: #f5f5f5; border-bottom: 2px solid #ddd;">
+                                <th style="padding: 12px; text-align: left;">Product Details</th>
+                                <th style="padding: 12px; text-align: left;">Retail Price</th>
+                                <th style="padding: 12px; text-align: center;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-table-body">
+                            <!-- Injected dynamically via script -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
 
-                    <input type="url" id="prod-image" placeholder="Image URL (Link from Unsplash or image host)" required class="auth-input">
-                    
-                    <textarea id="prod-desc" placeholder="Brief Product Explanation (Max 150 words to hook customers)" required class="auth-input" style="height: 100px; padding: 12px; resize: none;"></textarea>
-
-                    <button type="submit" id="submit-btn" class="auth-submit-btn">Save Product to Inventory</button>
-                    <button type="button" id="cancel-edit-btn" class="auth-submit-btn hidden" style="background-color: #999; margin-top: 5px;">Cancel Editing</button>
-                </form>
-            </div>
-        </section>
-
-        <!-- Live Inventory Table List -->
-        <section class="auth-box" style="max-width: 1000px; margin: 0 auto; text-align: left;">
-            <h2 style="margin-bottom: 20px;">Current Stocked Items</h2>
-            <div style="overflow-x: auto;">
-                <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
-                    <thead>
-                        <tr style="background-color: #f4f1eb; border-bottom: 2px solid #eae6e1;">
-                            <th style="padding: 12px; text-align: left;">Image</th>
-                            <th style="padding: 12px; text-align: left;">Product Details</th>
-                            <th style="padding: 12px; text-align: left;">Original Cost</th>
-                            <th style="padding: 12px; text-align: left;">3x Retail Price</th>
-                            <th style="padding: 12px; text-align: center;">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="admin-table-body">
-                        <!-- Product entries will render here dynamically via JavaScript -->
-                    </tbody>
-                </table>
-            </div>
-        </section>
-    </main>
-
-    <!-- Connect your admin code logic file -->
     <script src="app.js"></script>
 </body>
 </html>

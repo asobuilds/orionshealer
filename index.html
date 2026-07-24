@@ -12,10 +12,10 @@
     <header class="site-header">
         <div class="logo-title">The Orion's Healer</div>
         <div class="header-right">
+            <!-- Active Search input box trigger -->
             <div class="search-bar-container">
-                <input type="text" placeholder="Search products..." class="header-search-input">
+                <input type="text" id="store-search-input" placeholder="Search products..." class="header-search-input" oninput="executeStoreLiveSearch()">
             </div>
-            <!-- Clickable Cart Menu Counter Button Trigger -->
             <div class="cart-total-display" onclick="toggleCartDrawer(true)" style="cursor: pointer;">
                 <span id="nav-cart-total">$0.00</span> <small id="nav-cart-count" style="color: #999;">0 items</small> 🛒
             </div>
@@ -40,7 +40,6 @@
                 <button class="close-cart-btn" onclick="toggleCartDrawer(false)">✖ Close</button>
             </div>
             
-            <!-- Dynamic Cart Items Container list window pane -->
             <div id="cart-items-list" class="cart-items-body">
                 <p style="text-align: center; color: #999; margin-top: 40px;">Your basket is currently empty.</p>
             </div>
@@ -55,26 +54,22 @@
         </div>
     </div>
 
-    <!-- Master Content Workspace Grid System (Main Left + Sidebar Right) -->
+    <!-- Master Content Workspace Grid System -->
     <div class="master-layout-wrapper">
         
-        <!-- Left Column: Mission Content and Active Storefront Listings -->
         <main class="left-content-column">
             
-            <!-- About Us Strategic Branding Box -->
             <section class="about-sanctuary-card" id="about-section">
                 <h2>Our Spiritual Mission</h2>
                 <p>Welcome to <strong>Orion's Healer</strong>. We are a dedicated digital sanctuary calibrated to assist you in cleansing your physical vessel and elevating your internal conscious light. We bridge ancient botanical wisdom with modern seekers to help you dissolve toxicities and anchor absolute peace.</p>
             </section>
 
-            <!-- Storefront Target Section -->
             <section id="shop-section">
                 <div class="product-grid" id="products">
                     <p>Loading the storefront inventory layer...</p>
                 </div>
             </section>
 
-            <!-- Interactive Promo Discount Block -->
             <section class="coupon-activation-box" id="coupon-section">
                 <h3>Spiritual Coupon Verification</h3>
                 <div style="display: flex; gap: 10px; margin-top: 10px;">
@@ -84,7 +79,6 @@
                 <p id="coupon-message" style="font-size: 0.85rem; margin-top: 8px; font-weight: 600;"></p>
             </section>
 
-            <!-- Community Experience Submissions -->
             <section class="reviews-display-module" id="reviews-section">
                 <h3>Circle Feedback & Breakthroughs</h3>
                 <div id="reviews-container"></div>
@@ -101,7 +95,6 @@
             </section>
         </main>
 
-        <!-- Right Column: Sidebar Navigation -->
         <aside class="right-sidebar-column">
             <h3 class="sidebar-category-header">Product Categories</h3>
             <ul class="sidebar-category-list">

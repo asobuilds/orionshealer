@@ -1,152 +1,45 @@
-// 1. Master Product Database Layer Featuring All 14 Items 
 const initialProducts = [
-    {
-        id: 1,
-        name: "Butterfly Pea Tea",
-        myPrice: 45.00,
-        visualStyle: "background: linear-gradient(135deg, #1e3c72, #2a5298); border-top: 8px solid #00d2ff;",
-        visualLabel: "🦋 TEA BAG",
-        category: "Teas",
-        description: "Vibrant premium sun-dried blue flower petals designed to boost memory and clear internal channels."
-    },
-    {
-        id: 2,
-        name: "Irish Sea Moss (Raw Bag)",
-        myPrice: 60.00,
-        visualStyle: "background: linear-gradient(135deg, #f5f7fa, #c3cfe2); border-top: 8px solid #8c7355;",
-        visualLabel: "🌿 RAW MOSS",
-        category: "Supplements",
-        description: "Organic wildcrafted gold ocean vegetation packed with essential cellular micronutrients."
-    },
-    {
-        id: 3,
-        name: "Organic Blue Lotus",
-        myPrice: 75.00,
-        visualStyle: "background: linear-gradient(135deg, #6a11cb, #2575fc); border-top: 8px solid #e0c3fc;",
-        visualLabel: "🔮 BLUE LOTUS",
-        category: "Herbs",
-        description: "Sustainably harvested Egyptian Blue Lotus petals to induce somatic calm and support deep meditation."
-    },
-    {
-        id: 4,
-        name: "Soursop Leaves (Dried Pouch)",
-        myPrice: 60.00,
-        visualStyle: "background: linear-gradient(135deg, #134e5e, #71b280); border-top: 8px solid #a8ff78;",
-        visualLabel: "🍃 SOURSOP",
-        category: "Herbs",
-        description: "Hand-selected premium soursop leaves optimized for clearing toxicities from the blood."
-    },
-    {
-        id: 5,
-        name: "Elderberries Whole Pouch",
-        myPrice: 75.00,
-        visualStyle: "background: linear-gradient(135deg, #2c3e50, #3498db); border-top: 8px solid #9b59b6;",
-        visualLabel: "🍇 ELDERBERRY",
-        category: "Herbs",
-        description: "Pure whole elderberries providing structural immune support and natural seasonal protection."
-    },
-    {
-        id: 6,
-        name: "Sea Moss Bulk 5 lb Bag",
-        myPrice: 300.00,
-        visualStyle: "background: linear-gradient(135deg, #e65c00, #F9D423); border-top: 8px solid #d35400;",
-        visualLabel: "📦 5LB BULK",
-        category: "Supplements",
-        description: "Master wholesale supply bag of gold raw Irish moss for long-term health sanctuary tracking."
-    },
-    {
-        id: 7,
-        name: "Hand-Carved Giraffe Sculpture",
-        myPrice: 30.00,
-        visualStyle: "background: linear-gradient(135deg, #4d3319, #805333); border-top: 8px solid #ffd1a3;",
-        visualLabel: "🦒 ARTIFACT",
-        category: "Miscellaneous",
-        description: "Hand-carved premium wooden giraffe sculpture artifact to anchor grounding earth energies in your space."
-    },
-    {
-        id: 8,
-        name: "African Art Sanctuary Mask",
-        myPrice: 1200.00,
-        visualStyle: "background: linear-gradient(135deg, #141414, #282828); border-top: 8px solid #8c7355;",
-        visualLabel: "🎭 RITUAL MASK",
-        category: "Miscellaneous",
-        description: "Authentic, high-vibrational hand-detailed traditional protective ancestral ritual mask sculpture."
-    }
+    { id: 1, name: "Butterfly Pea Tea", myPrice: 45.00, visualStyle: "background: linear-gradient(135deg, #1e3c72, #2a5298); border-top: 8px solid #00d2ff;", visualLabel: "🦋 TEA BAG", category: "Teas", description: "Vibrant premium sun-dried blue flower petals designed to boost memory and clear internal channels." },
+    { id: 2, name: "Irish Sea Moss (Raw Bag)", myPrice: 60.00, visualStyle: "background: linear-gradient(135deg, #f5f7fa, #c3cfe2); border-top: 8px solid #8c7355;", visualLabel: "🌿 RAW MOSS", category: "Supplements", description: "Organic wildcrafted gold ocean vegetation packed with essential cellular micronutrients." },
+    { id: 3, name: "Organic Blue Lotus", myPrice: 75.00, visualStyle: "background: linear-gradient(135deg, #6a11cb, #2575fc); border-top: 8px solid #e0c3fc;", visualLabel: "🔮 BLUE LOTUS", category: "Herbs", description: "Sustainably harvested Egyptian Blue Lotus petals to induce somatic calm and support deep meditation." },
+    { id: 4, name: "Soursop Leaves (Dried Pouch)", myPrice: 60.00, visualStyle: "background: linear-gradient(135deg, #134e5e, #71b280); border-top: 8px solid #a8ff78;", visualLabel: "🍃 SOURSOP", category: "Herbs", description: "Hand-selected premium soursop leaves optimized for clearing toxicities from the blood." },
+    { id: 5, name: "Elderberries Whole Pouch", myPrice: 75.00, visualStyle: "background: linear-gradient(135deg, #2c3e50, #3498db); border-top: 8px solid #9b59b6;", visualLabel: "🍇 ELDERBERRY", category: "Herbs", description: "Pure whole elderberries providing structural immune support and natural seasonal protection." },
+    { id: 6, name: "Sea Moss Bulk 5 lb Bag", myPrice: 300.00, visualStyle: "background: linear-gradient(135deg, #e65c00, #F9D423); border-top: 8px solid #d35400;", visualLabel: "📦 5LB BULK", category: "Supplements", description: "Master wholesale supply bag of gold raw Irish moss for long-term health sanctuary tracking." },
+    { id: 7, name: "Hand-Carved Giraffe Sculpture", myPrice: 30.00, visualStyle: "background: linear-gradient(135deg, #4d3319, #805333); border-top: 8px solid #ffd1a3;", visualLabel: "🦒 ARTIFACT", category: "Miscellaneous", description: "Hand-carved premium wooden giraffe sculpture artifact to anchor grounding earth energies in your space." },
+    { id: 8, name: "African Art Sanctuary Mask", myPrice: 1200.00, visualStyle: "background: linear-gradient(135deg, #141414, #282828); border-top: 8px solid #8c7355;", visualLabel: "🎭 RITUAL MASK", category: "Miscellaneous", description: "Authentic, high-vibrational hand-detailed traditional protective ancestral ritual mask sculpture." }
 ];
 
 const remainingProducts = [
-    {
-        id: 9,
-        name: "Premium Ankh Leather Bag",
-        myPrice: 285.00,
-        visualStyle: "background: linear-gradient(135deg, #3d2314, #5c3a21); border-top: 8px solid #d4af37;",
-        visualLabel: "🧳 ANKH BAG",
-        category: "Miscellaneous",
-        description: "Hand-crafted custom leather messenger setup featuring the sacred Egyptian key of life emblem."
-    },
-    {
-        id: 10,
-        name: "Pure Premium Manuka Honey",
-        myPrice: 45.00,
-        visualStyle: "background: linear-gradient(135deg, #f12711, #f5af19); border-top: 8px solid #fff;",
-        visualLabel: "🍯 HONEY JAR",
-        category: "Supplements",
-        description: "High-potency organic medicinal manuka honey compound for profound gut realignments and immunity."
-    },
-    {
-        id: 11,
-        name: "Sacred Rose Water Distillate",
-        myPrice: 15.00,
-        visualStyle: "background: linear-gradient(135deg, #ffafbd, #ffc3a0); border-top: 8px solid #e91e63;",
-        visualLabel: "🌹 ROSE WATER",
-        category: "Personal Care",
-        description: "Pure steam-distilled organic rose water fluid to clear skin properties and elevate mood attributes."
-    },
-    {
-        id: 12,
-        name: "Fit & Flat Belly Tonic",
-        myPrice: 120.00,
-        visualStyle: "background: linear-gradient(135deg, #56ab2f, #a8ff78); border-top: 8px solid #388e3c;",
-        visualLabel: "🧪 BELLY TONIC",
-        category: "Tonics",
-        description: "A premium organic biological liquid fluid engineered to support digestive realignments and clear core tracts."
-    },
-    {
-        id: 13,
-        name: "Brain & Heart Balance Tonic",
-        myPrice: 120.00,
-        visualStyle: "background: linear-gradient(135deg, #ff416c, #ff4b2b); border-top: 8px solid #d32f2f;",
-        visualLabel: "🧪 BRAIN TONIC",
-        category: "Tonics",
-        description: "A high-vibrational cellular extraction designed to enhance memory retention and stabilize arterial fields."
-    },
-    {
-        id: 14,
-        name: "Lungs & Liver Cleansing Tonic",
-        myPrice: 120.00,
-        visualStyle: "background: linear-gradient(135deg, #00c6ff, #0072ff); border-top: 8px solid #0097a7;",
-        visualLabel: "🧪 LUNG TONIC",
-        category: "Tonics",
-        description: "Deep organic fluid compound formulated to flush metabolic toxicities and expand respiratory capacities."
-    }
+    { id: 9, name: "Premium Ankh Leather Bag", myPrice: 285.00, visualStyle: "background: linear-gradient(135deg, #3d2314, #5c3a21); border-top: 8px solid #d4af37;", visualLabel: "🧳 ANKH BAG", category: "Miscellaneous", description: "Hand-crafted custom leather messenger setup featuring the sacred Egyptian key of life emblem." },
+    { id: 10, name: "Pure Premium Manuka Honey", myPrice: 45.00, visualStyle: "background: linear-gradient(135deg, #f12711, #f5af19); border-top: 8px solid #fff;", visualLabel: "🍯 HONEY JAR", category: "Supplements", description: "High-potency organic medicinal manuka honey compound for profound gut realignments and immunity." },
+    { id: 11, name: "Sacred Rose Water Distillate", myPrice: 15.00, visualStyle: "background: linear-gradient(135deg, #ffafbd, #ffc3a0); border-top: 8px solid #e91e63;", visualLabel: "🌹 ROSE WATER", category: "Personal Care", description: "Pure steam-distilled organic rose water fluid to clear skin properties and elevate mood attributes." },
+    { id: 12, name: "Fit & Flat Belly Tonic", myPrice: 120.00, visualStyle: "background: linear-gradient(135deg, #56ab2f, #a8ff78); border-top: 8px solid #388e3c;", visualLabel: "🧪 BELLY TONIC", category: "Tonics", description: "A premium organic biological liquid fluid engineered to support digestive realignments and clear core tracts." },
+    { id: 13, name: "Brain & Heart Balance Tonic", myPrice: 120.00, visualStyle: "background: linear-gradient(135deg, #ff416c, #ff4b2b); border-top: 8px solid #d32f2f;", visualLabel: "🧪 BRAIN TONIC", category: "Tonics", description: "A high-vibrational cellular extraction designed to enhance memory retention and stabilize arterial fields." },
+    { id: 14, name: "Lungs & Liver Cleansing Tonic", myPrice: 120.00, visualStyle: "background: linear-gradient(135deg, #00c6ff, #0072ff); border-top: 8px solid #0097a7;", visualLabel: "🧪 LUNG TONIC", category: "Tonics", description: "Deep organic fluid compound formulated to flush metabolic toxicities and expand respiratory capacities." }
 ];
 
-// Shopping Cart Array Track Storage
 let activeCart = [];
 let activeDiscountMultiplier = 1.0; 
 let currentCategoryFilter = "All";
+let searchQueryString = ""; // Stores text character streams typed by the client
 let currentInventory = initialProducts.concat(remainingProducts);
-let currentReviews = JSON.parse(localStorage.getItem('orion_reviews')) || [
-    { name: "Malik K.", rating: 5, text: "Bundling multiple tonics inside the new shopping basket interface works seamlessly!" }
-];
+let currentReviews = JSON.parse(localStorage.getItem('orion_reviews')) || [{ name: "Malik K.", rating: 5, text: "The live real-time filtering updates instantaneously!" }];
 
 function displayHomepageProducts() {
     const productGrid = document.getElementById('products');
     if (!productGrid) return; productGrid.innerHTML = "";
 
-    const itemsToDisplay = currentCategoryFilter === "All" 
-        ? currentInventory 
-        : currentInventory.filter(p => p.category.toLowerCase() === currentCategoryFilter.toLowerCase());
+    // Multi-tier intersection check (Matches category selection AND handles typing inputs)
+    const itemsToDisplay = currentInventory.filter(product => {
+        const matchesCategory = currentCategoryFilter === "All" || product.category.toLowerCase() === currentCategoryFilter.toLowerCase();
+        const matchesSearch = product.name.toLowerCase().includes(searchQueryString.toLowerCase()) || product.description.toLowerCase().includes(searchQueryString.toLowerCase());
+        return matchesCategory && matchesSearch;
+    });
+
+    if (itemsToDisplay.length === 0) {
+        productGrid.innerHTML = "<p style='grid-column: 1/-1; padding: 40px; text-align:center; color:#999;'>No spiritual items found matching your filter queries.</p>";
+        return;
+    }
 
     itemsToDisplay.forEach(product => {
         const finalPrice = product.myPrice * activeDiscountMultiplier;
@@ -168,39 +61,78 @@ function displayHomepageProducts() {
         productGrid.innerHTML += productCard;
     });
 }
+
+// Global hook running every single time a user strokes a key inside the input box
+function executeStoreLiveSearch() {
+    const inputElement = document.getElementById('store-search-input');
+    if (inputElement) {
+        searchQueryString = inputElement.value.trim();
+        displayHomepageProducts(); // Instant re-render loop execution
+    }
+}
 /* ==========================================
-   DYNAMIC MULTI-ITEM SHOPPING CART ENGINE
+   SECURE ADMIN ACCESS PASSWORD PROTECTION GATE
+   ========================================== */
+function verifyAdminGatewayPasskey() {
+    const passkeyField = document.getElementById('admin-secret-pass-key');
+    const errorDisplay = document.getElementById('admin-auth-error-msg');
+    const lockModal = document.getElementById('admin-auth-lockout-modal');
+    const dashboardView = document.getElementById('master-admin-dashboard-view');
+
+    // Your private structural management dashboard token key setup definition
+    const secureMasterKey = "orion777"; 
+
+    if (passkeyField.value === secureMasterKey) {
+        lockModal.classList.add('hidden'); // Drop intercept box
+        dashboardView.classList.remove('hidden'); // Render dashboard grids
+        displayAdminInventoryTable(); // Load database logs
+    } else {
+        errorDisplay.innerText = "❌ Access Denied. Your sanctuary secret key code is invalid.";
+        passkeyField.value = "";
+    }
+}
+
+function displayAdminInventoryTable() {
+    const tableBody = document.getElementById('admin-table-body');
+    if (!tableBody) return; tableBody.innerHTML = "";
+
+    currentInventory.forEach((product) => {
+        const row = `
+            <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 12px;"><strong>${product.name}</strong><br><small style='color:#999;'>${product.category}</small></td>
+                <td style="padding: 12px; font-weight:bold; color:#2b70c9;">$${Number(product.myPrice).toFixed(2)}</td>
+                <td style="padding: 12px; text-align: center;">
+                    <button onclick="deleteProductBtnTrigger(${product.id})" style="background:#cc3333; color:white; padding:5px 10px; border:none; cursor:pointer; border-radius:2px;">Delete</button>
+                </td>
+            </tr>
+        `;
+        tableBody.innerHTML += row;
+    });
+}
+
+function deleteProductBtnTrigger(id) {
+    if (confirm("Permanently wipe this product from live storefront parameters?")) {
+        currentInventory = currentInventory.filter(p => p.id !== id);
+        displayAdminInventoryTable();
+    }
+}
+
+/* ==========================================
+   BASKET & UTILITIES HOOK TRALERS
    ========================================== */
 function toggleCartDrawer(isOpen) {
     const drawer = document.getElementById('cart-drawer');
-    if (!drawer) return;
-    if (isOpen) {
-        drawer.classList.remove('hidden');
-    } else {
-        drawer.classList.add('hidden');
-    }
+    if (drawer) isOpen ? drawer.classList.remove('hidden') : drawer.classList.add('hidden');
 }
 
 function addItemToBasket(productId) {
     const product = currentInventory.find(p => p.id === productId);
     if (!product) return;
-
-    // Check if the item is already sitting inside your cart basket array
     const existingItem = activeCart.find(item => item.id === productId);
-
-    if (existingItem) {
-        existingItem.quantity += 1;
-    } else {
-        activeCart.push({
-            id: product.id,
-            name: product.name,
-            price: product.myPrice * activeDiscountMultiplier,
-            quantity: 1
-        });
-    }
-
+    if (existingItem) { existingItem.quantity += 1; } 
+    else { activeCart.push({ id: product.id, name: product.name, price: product.myPrice * activeDiscountMultiplier, quantity: 1 }); }
     updateCartInterfaceTotals();
-    alert(product.name + " added to your sacred basket! Click the cart icon at the header to view.");
+    alert(product.name + " packed into basket!");
 }
 
 function removeItemFromBasket(productId) {
@@ -209,77 +141,39 @@ function removeItemFromBasket(productId) {
 }
 
 function updateCartInterfaceTotals() {
-    let totalItems = 0;
-    let totalPrice = 0;
-    const itemsListContainer = document.getElementById('cart-items-list');
-
-    if (!itemsListContainer) return;
-    itemsListContainer.innerHTML = "";
-
-    if (activeCart.length === 0) {
-        itemsListContainer.innerHTML = "<p style='text-align: center; color: #999; margin-top: 40px;'>Your basket is currently empty.</p>";
-    } else {
+    let tItems = 0; let tPrice = 0;
+    const list = document.getElementById('cart-items-list');
+    if (!list) return; list.innerHTML = "";
+    if (activeCart.length === 0) { list.innerHTML = "<p style='text-align: center; color: #999; margin-top: 40px;'>Your basket is currently empty.</p>"; } 
+    else {
         activeCart.forEach(item => {
-            totalItems += item.quantity;
-            totalPrice += item.price * item.quantity;
-
-            const itemRow = `
-                <div class="cart-item-row">
-                    <div class="cart-item-details">
-                        <h4>${item.name}</h4>
-                        <small style="color:#777;">$${item.price.toFixed(2)} x ${item.quantity}</small>
-                    </div>
-                    <button onclick="removeItemFromBasket(${item.id})" style="background:none; border:none; color:#cc3333; cursor:pointer; font-size:0.85rem; text-decoration:underline;">Remove</button>
-                </div>
-            `;
-            itemsListContainer.innerHTML += itemRow;
+            tItems += item.quantity; tPrice += item.price * item.quantity;
+            list.innerHTML += `<div class="cart-item-row"><div class="cart-item-details"><h4>${item.name}</h4><small style="color:#777;">$${item.price.toFixed(2)} x ${item.quantity}</small></div><button onclick="removeItemFromBasket(${item.id})" style="background:none; border:none; color:#cc3333; cursor:pointer; font-size:0.85rem; text-decoration:underline;">Remove</button></div>`;
         });
     }
-
-    // Refresh navigation counts and header total tracking displays
-    document.getElementById('nav-cart-count').innerText = totalItems + " items";
-    document.getElementById('nav-cart-total').innerText = "$" + totalPrice.toFixed(2);
-    document.getElementById('cart-drawer-subtotal').innerText = "$" + totalPrice.toFixed(2);
+    document.getElementById('nav-cart-count').innerText = tItems + " items";
+    document.getElementById('nav-cart-total').innerText = "$" + tPrice.toFixed(2);
+    document.getElementById('cart-drawer-subtotal').innerText = "$" + tPrice.toFixed(2);
 }
 
 function checkoutEntireCartViaEmail() {
-    if (activeCart.length === 0) {
-        alert("Your shopping basket is currently empty! Add items before running verification checkout scripts.");
-        return;
-    }
-
+    if (activeCart.length === 0) return alert("Your basket is empty.");
     const businessEmail = "orionshealer.shop@gmail.com";
-    const subject = "New Bulk Multi-Item Order Request - Orion's Healer";
-
-    // Format a beautifully clean structured invoice containing every checked out element line item loop
     let invoiceBody = "Hello Orion's Healer Sanctuary Team,\n\nI want to place an order for the following list of spiritual wellness items:\n\n✨ SACRED BASKET INVOICE:\n----------------------------------------\n";
     let calculatedGrandTotal = 0;
-
     activeCart.forEach((item, index) => {
-        let rowTotal = item.price * item.quantity;
-        calculatedGrandTotal += rowTotal;
+        let rowTotal = item.price * item.quantity; calculatedGrandTotal += rowTotal;
         invoiceBody += (index + 1) + ". " + item.name + " [Qty: " + item.quantity + "] - $" + rowTotal.toFixed(2) + "\n";
     });
-
-    invoiceBody += "----------------------------------------\n";
-    invoiceBody += "🛒 GRAND TOTAL RETREIVAL VALUATION: $" + calculatedGrandTotal.toFixed(2) + "\n\n";
-    invoiceBody += "📦 MY SHIPPING ATTRIBUTES:\n----------------------------------------\nFull Name:\nDelivery Address:\nPhone/WhatsApp Number:\n\nPlease process this manual invoice transmission block and reply with routing metrics so I can settle payment.\n\nThank you!";
-
-    window.location.href = "mailto:" + businessEmail + "?subject=" + encodeURIComponent(subject) + "&body= " + encodeURIComponent(invoiceBody);
+    invoiceBody += "----------------------------------------\n🛒 GRAND TOTAL: $" + calculatedGrandTotal.toFixed(2) + "\n\n📦 SHIPPING ATTRIBUTES:\nFull Name:\nDelivery Address:\nPhone:\n\nPlease process this manual transaction invoice.";
+    window.location.href = "mailto:" + businessEmail + "?subject=" + encodeURIComponent("New Order Box Form") + "&body=" + encodeURIComponent(invoiceBody);
 }
 
-/* ==========================================
-   UTILITY FILTER CONTROLLERS & HOOKS
-   ========================================== */
 function filterCategory(categoryName) {
     currentCategoryFilter = categoryName;
     const links = document.querySelectorAll('.sidebar-cat-link');
     links.forEach(link => {
-        if (link.innerText.toLowerCase() === categoryName.toLowerCase() || (categoryName === "All" && link.innerText.includes("All"))) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
+        link.innerText.toLowerCase().includes(categoryName.toLowerCase()) || (categoryName === "All" && link.innerText.includes("All")) ? link.classList.add('active') : link.classList.remove('active');
     });
     displayHomepageProducts();
 }
@@ -287,20 +181,10 @@ function filterCategory(categoryName) {
 function applyDiscountCoupon() {
     const input = document.getElementById('coupon-input').value.trim().toUpperCase();
     const msg = document.getElementById('coupon-message');
-    if (input === "SEEKER10") {
-        activeDiscountMultiplier = 0.90;
-        msg.style.color = "green"; msg.innerText = "10% Coupon code applied successfully.";
-    } else {
-        activeDiscountMultiplier = 1.0;
-        msg.style.color = "red"; msg.innerText = "Invalid verification coupon code configuration.";
-    }
-    // Update basket costs in real-time if a code is validated mid-session
-    activeCart.forEach(item => {
-        const matchingProduct = currentInventory.find(p => p.id === item.id);
-        if (matchingProduct) item.price = matchingProduct.myPrice * activeDiscountMultiplier;
-    });
-    displayHomepageProducts();
-    updateCartInterfaceTotals();
+    if (input === "SEEKER10") { activeDiscountMultiplier = 0.90; msg.style.color = "green"; msg.innerText = "10% Coupon code applied successfully."; } 
+    else { activeDiscountMultiplier = 1.0; msg.style.color = "red"; msg.innerText = "Invalid verification code."; }
+    activeCart.forEach(item => { const m = currentInventory.find(p => p.id === item.id); if (m) item.price = m.myPrice * activeDiscountMultiplier; });
+    displayHomepageProducts(); updateCartInterfaceTotals();
 }
 
 function displayCommunityReviews() {
@@ -316,18 +200,11 @@ if (revForm) {
     revForm.addEventListener('submit', function(e) {
         e.preventDefault();
         const newReview = { name: document.getElementById('rev-user').value, rating: parseInt(document.getElementById('rev-rating').value), text: document.getElementById('rev-text').value };
-        currentReviews.unshift(newReview);
-        localStorage.setItem('orion_reviews', JSON.stringify(currentReviews));
+        currentReviews.unshift(newReview); localStorage.setItem('orion_reviews', JSON.stringify(currentReviews));
         displayCommunityReviews(); revForm.reset(); alert("Feedback saved!");
     });
 }
 
-function switchAuthMode(mode) {
-    const l = document.getElementById('login-box'); const r = document.getElementById('register-box');
-    if (mode === 'register') { l.classList.add('hidden'); r.classList.remove('hidden'); } else { r.classList.add('hidden'); l.classList.remove('hidden'); }
-}
-
 window.onload = function() {
-    localStorage.removeItem('orion_inventory');
-    displayHomepageProducts(); displayCommunityReviews(); updateCartInterfaceTotals();
+    displayHomepageProducts(); displayCommunityReviews(); updateCartInterfaceTotals(); displayAdminInventoryTable();
 };
