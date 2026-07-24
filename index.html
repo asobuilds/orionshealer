@@ -1,33 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orion's Healer | Spiritual Wellness Shop</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* --- Divider Styling --- */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: #eae6e1;
+    margin: 60px auto;
+    max-width: 1200px;
+}
 
-    <!-- Top Navigation Bar -->
-    <header class="site-header">
-        <div class="logo">ORION'S HEALER</div>
-        <nav class="main-nav">
-            <a href="#">Home</a>
-            <a href="#">Shop</a>
-            <a href="#">Blog</a>
-            <a href="#">Cart (0)</a>
-        </nav>
-    </header>
+/* --- Blog Container Area --- */
+.blog-container {
+    max-width: 1200px;
+    margin: 0 auto 80px auto;
+    padding: 0 20px;
+}
 
-    <!-- Main Store Area -->
-    <main class="store-container">
-        <h1>Featured Spiritual Products</h1>
-        <section class="product-grid" id="products">
-            <!-- This is a placeholder where our products will go -->
-            <p>Our inventory is loading...</p>
-        </section>
-    </main>
+.blog-container h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #333333;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
 
-    <script src="app.js"></script>
-</body>
-</html>
+.blog-subtitle {
+    text-align: center;
+    color: #8c7355;
+    font-style: italic;
+    margin-bottom: 40px;
+    font-size: 0.95rem;
+}
+
+/* --- Blog Card Grid System --- */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.blog-card {
+    background-color: #ffffff;
+    border: 1px solid #eae6e1;
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.blog-meta {
+    font-size: 0.75rem;
+    color: #999999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.blog-card h3 {
+    font-size: 1.3rem;
+    color: #2b2b2b;
+    margin-bottom: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.blog-card p {
+    color: #666666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.read-more-link {
+    color: #8c7355;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.read-more-link:hover {
+    color: #2b2b2b;
+}
