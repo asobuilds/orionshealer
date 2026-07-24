@@ -15,8 +15,9 @@
             <div class="search-bar-container">
                 <input type="text" placeholder="Search products..." class="header-search-input">
             </div>
-            <div class="cart-total-display">
-                <span>$0.00</span> <small style="color: #999;">0 items</small> 🛒
+            <!-- Clickable Cart Menu Counter Button Trigger -->
+            <div class="cart-total-display" onclick="toggleCartDrawer(true)" style="cursor: pointer;">
+                <span id="nav-cart-total">$0.00</span> <small id="nav-cart-count" style="color: #999;">0 items</small> 🛒
             </div>
         </div>
     </header>
@@ -25,11 +26,34 @@
     <nav class="sub-nav-links">
         <a href="#about-section">Home</a>
         <a href="#about-section">About</a>
-        <a href="#shop-section">Cart</a>
-        <a href="#shop-section">Checkout</a>
+        <a href="#" onclick="toggleCartDrawer(true)">Cart</a>
+        <a href="#" onclick="toggleCartDrawer(true)">Checkout</a>
         <a href="#auth-section">My account</a>
         <a href="#shop-section">Shop</a>
     </nav>
+
+    <!-- Floating Shopping Cart Sliding Sidebar Overlay Drawer -->
+    <div id="cart-drawer" class="cart-drawer-overlay hidden">
+        <div class="cart-drawer-content">
+            <div class="cart-drawer-header">
+                <h3>Your Sacred Basket</h3>
+                <button class="close-cart-btn" onclick="toggleCartDrawer(false)">✖ Close</button>
+            </div>
+            
+            <!-- Dynamic Cart Items Container list window pane -->
+            <div id="cart-items-list" class="cart-items-body">
+                <p style="text-align: center; color: #999; margin-top: 40px;">Your basket is currently empty.</p>
+            </div>
+
+            <div class="cart-drawer-footer">
+                <div class="cart-summary-row">
+                    <span>Subtotal:</span>
+                    <strong id="cart-drawer-subtotal">$0.00</strong>
+                </div>
+                <button onclick="checkoutEntireCartViaEmail()" class="add-to-cart-btn" style="background-color: #2b70c9; font-weight: bold; margin-top: 15px;">Send Complete Order to Email</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Master Content Workspace Grid System (Main Left + Sidebar Right) -->
     <div class="master-layout-wrapper">
