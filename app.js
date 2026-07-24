@@ -1,10 +1,10 @@
-// Expanded 14-Item Database Featuring High-Definition Open-Source Visuals
+// Master Database Layer with Inline Embedded Visual Vectors (100% Block Proof)
 const initialProducts = [
     {
         id: 1,
         name: "Butterfly Pea Tea",
         myPrice: 45.00,
-        image: "https://unsplash.com",
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%232b70c9' stroke-width='1'><circle cx='12' cy='12' r='10'/><path d='M12 8v8M8 12h8'/></svg>",
         category: "Teas",
         description: "Vibrant premium sun-dried blue flower petals designed to boost memory and clear internal channels."
     },
@@ -12,7 +12,7 @@ const initialProducts = [
         id: 2,
         name: "Irish Sea Moss (Raw)",
         myPrice: 60.00,
-        image: "https://unsplash.com",
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%238c7355' stroke-width='1'><path d='M12 2L2 22h20L12 2z'/></svg>",
         category: "Supplements",
         description: "Organic wildcrafted gold ocean vegetation packed with essential cellular micronutrients."
     },
@@ -20,7 +20,7 @@ const initialProducts = [
         id: 3,
         name: "Organic Blue Lotus",
         myPrice: 75.00,
-        image: "https://unsplash.com",
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%232b70c9' stroke-width='1'><circle cx='12' cy='12' r='10'/><path d='M12 8v8M8 12h8'/></svg>",
         category: "Herbs",
         description: "Sustainably harvested Egyptian Blue Lotus petals to induce somatic calm and support deep meditation."
     },
@@ -28,7 +28,7 @@ const initialProducts = [
         id: 4,
         name: "Soursop Leaves (Dried)",
         myPrice: 60.00,
-        image: "https://unsplash.com",
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%238c7355' stroke-width='1'><path d='M12 2L2 22h20L12 2z'/></svg>",
         category: "Herbs",
         description: "Hand-selected premium soursop leaves optimized for clearing toxicities from the blood."
     },
@@ -36,7 +36,7 @@ const initialProducts = [
         id: 5,
         name: "Sea Moss Bulk 5 lb Bag",
         myPrice: 300.00,
-        image: "https://unsplash.com",
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%238c7355' stroke-width='1'><rect x='3' y='3' width='18' height='18' rx='2'/></svg>",
         category: "Supplements",
         description: "Master wholesale supply bag of gold raw Irish moss for long-term health sanctuary tracking."
     },
@@ -44,7 +44,7 @@ const initialProducts = [
         id: 6,
         name: "Giraffe Sculpture",
         myPrice: 30.00,
-        image: "https://unsplash.com",
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%23111111' stroke-width='1'><rect x='3' y='3' width='18' height='18' rx='2'/></svg>",
         category: "Miscellaneous",
         description: "Hand-carved premium wooden giraffe sculpture artifact to anchor grounding earth energies in your space."
     },
@@ -52,7 +52,7 @@ const initialProducts = [
         id: 7,
         name: "African Art Sanctuary Mask",
         myPrice: 1200.00,
-        image: "https://unsplash.com",
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%23111111' stroke-width='1'><rect x='3' y='3' width='18' height='18' rx='2'/></svg>",
         category: "Miscellaneous",
         description: "Authentic, high-vibrational hand-detailed traditional protective ancestral ritual mask sculpture."
     },
@@ -60,7 +60,7 @@ const initialProducts = [
         id: 8,
         name: "Premium Ankh Leather Bag",
         myPrice: 285.00,
-        image: "https://unsplash.com",
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%23111111' stroke-width='1'><rect x='3' y='3' width='18' height='18' rx='2'/></svg>",
         category: "Miscellaneous",
         description: "Hand-crafted custom leather messenger tracking setup featuring the sacred Egyptian key of life emblem."
     },
@@ -68,7 +68,7 @@ const initialProducts = [
         id: 9,
         name: "Pure Premium Manuka Honey",
         myPrice: 45.00,
-        image: "https://unsplash.com",
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%238c7355' stroke-width='1'><path d='M12 2L2 22h20L12 2z'/></svg>",
         category: "Supplements",
         description: "High-potency organic medicinal manuka honey compound for profound gut realignments and immunity."
     },
@@ -76,47 +76,39 @@ const initialProducts = [
         id: 10,
         name: "Sacred Rose Water Distillate",
         myPrice: 15.00,
-        image: "https://unsplash.com",
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%232b70c9' stroke-width='1'><circle cx='12' cy='12' r='10'/></svg>",
         category: "Personal Care",
         description: "Pure steam-distilled organic rose water fluid to clear skin properties and elevate mood attributes."
     },
     {
         id: 11,
-        name: "Ritual Small Cauldron",
+        name: "Fit & Flat Belly Tonic",
         myPrice: 120.00,
-        image: "https://unsplash.com",
-        category: "Miscellaneous",
-        description: "Heavy solid iron casting vessel designed for burning sacred resins, protective sage, and altar items safely."
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%238c7355' stroke-width='1.5'><path d='M6 3h12v3H6zm2 3h8v13a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2z'/><circle cx='12' cy='13' r='3'/></svg>",
+        category: "Tonics",
+        description: "A premium organic botanical fluid matrix engineered to cleanse the digestive track and balance core energy fields." [IMAGE_CONTEXT]
     },
     {
         id: 12,
-        name: "Pure Menthol Crystals",
-        myPrice: 30.00,
-        image: "https://unsplash.com",
-        category: "Personal Care",
-        description: "100% natural, intensely aromatic menthol cooling crystal extractions to clear respiratory pathways completely."
+        name: "Brain & Heart Balance Tonic",
+        myPrice: 120.00,
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%23cc3333' stroke-width='1.5'><path d='M6 3h12v3H6zm2 3h8v13a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2z'/><circle cx='12' cy='13' r='3'/></svg>",
+        category: "Tonics",
+        description: "A high-vibrational cellular extraction designed to support memory retention, sharpen focus, and fortify heart properties."
     },
     {
         id: 13,
-        name: "Carved Wood Elephant Artifact",
-        myPrice: 60.00,
-        image: "https://unsplash.com",
-        category: "Miscellaneous",
-        description: "Intricately finished premium solid dark wood elephant figurine to channel protection, stability, and luck."
-    },
-    {
-        id: 14,
-        name: "Shiva Shilajit Resin Matrix",
-        myPrice: 90.00,
-        image: "https://unsplash.com",
-        category: "Supplements",
-        description: "High-vibrational Himalayan fulvic acid compound engineered to boost baseline stamina and physical energy levels."
+        name: "Lungs & Liver Cleansing Tonic",
+        myPrice: 120.00,
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%232b70c9' stroke-width='1.5'><path d='M6 3h12v3H6zm2 3h8v13a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2z'/><circle cx='12' cy='13' r='3'/></svg>",
+        category: "Tonics",
+        description: "Deep organic fluid compound formulated to flush metabolic toxicities and expand respiratory baseline capacities."
     }
 ];
 
 const defaultReviews = [
-    { name: "Malik K.", rating: 5, text: "The Butterfly Pea Tea turns an incredible blue and completely cleared my morning brain fog." },
-    { name: "Elena R.", rating: 5, text: "Excellent shipping updates on the bulk 5 lb Sea Moss bag. Top-tier quality." }
+    { name: "Malik K.", rating: 5, text: "The Fit & Flat Belly tonic has completely optimized my gut tracking within a single week." },
+    { name: "Elena R.", rating: 5, text: "Excellent execution format on the ordering system. Highly secure and fast response metrics." }
 ];
 
 let activeDiscountMultiplier = 1.0; 
@@ -143,12 +135,9 @@ function displayHomepageProducts() {
             ? `<span style="text-decoration: line-through; color: #999; font-size: 0.85rem; font-weight:400; margin-right: 8px;">$${Number(product.myPrice).toFixed(2)}</span>$${finalPrice.toFixed(2)}`
             : `$${Number(product.myPrice).toFixed(2)}`;
 
-        // Force browser cache clearance using a timestamp parameter append mechanism
-        const safeImageSrc = `${product.image}&cb=${Date.now()}`;
-
         const productCard = `
             <div class="product-card">
-                <img src="${safeImageSrc}" alt="${product.name}" class="product-image" onerror="this.src='https://unsplash.com'">
+                <img src="${product.image}" alt="${product.name}" class="product-image" style="background:#fafafa; border-radius:4px; padding:10px;">
                 <h3 class="product-title"><strong>${product.name}</strong></h3>
                 <p style="font-size: 0.8rem; color: #777; margin-bottom: 10px; line-height:1.3;">${product.description}</p>
                 <p class="product-price">${priceDisplay}</p>
@@ -158,7 +147,6 @@ function displayHomepageProducts() {
         productGrid.innerHTML += productCard;
     });
 }
-
 function filterCategory(categoryName) {
     currentCategoryFilter = categoryName;
     const links = document.querySelectorAll('.sidebar-cat-link');
@@ -171,6 +159,7 @@ function filterCategory(categoryName) {
     });
     displayHomepageProducts();
 }
+
 function redirectToEmail(productName, price) {
     const businessEmail = "orionshealer.shop@gmail.com"; 
     const subject = `New Order Request: ${productName} - Orion's Healer`;
@@ -228,7 +217,7 @@ if (regForm) {
 }
 
 window.onload = function() {
-    // Overwrite and clear any bad references left in local hardware memory
+    // Clear out any old web link cache blocks completely
     localStorage.removeItem('orion_inventory');
     currentInventory = initialProducts;
     
