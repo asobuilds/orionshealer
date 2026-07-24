@@ -1,4 +1,4 @@
-// Master Database Layer with Inline Embedded Visual Vectors (100% Block Proof)
+// Master Database Layer with Completely Double-Quoted Safe Vector Imagery Strings
 const initialProducts = [
     {
         id: 1,
@@ -42,73 +42,41 @@ const initialProducts = [
     },
     {
         id: 6,
-        name: "Giraffe Sculpture",
-        myPrice: 30.00,
-        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%23111111' stroke-width='1'><rect x='3' y='3' width='18' height='18' rx='2'/></svg>",
-        category: "Miscellaneous",
-        description: "Hand-carved premium wooden giraffe sculpture artifact to anchor grounding earth energies in your space."
+        name: "The Advanced Wellness Bundle",
+        myPrice: 510.00,
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%238c7355' stroke-width='1'><rect x='3' y='3' width='18' height='18' rx='2'/></svg>",
+        category: "Bundles",
+        description: "Complete strategic multi-bottle premium systemic internal wellness preparation setup tracker."
     },
     {
         id: 7,
-        name: "African Art Sanctuary Mask",
-        myPrice: 1200.00,
-        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%23111111' stroke-width='1'><rect x='3' y='3' width='18' height='18' rx='2'/></svg>",
-        category: "Miscellaneous",
-        description: "Authentic, high-vibrational hand-detailed traditional protective ancestral ritual mask sculpture."
+        name: "Red X Tonic",
+        myPrice: 225.00,
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%23cc3333' stroke-width='1.5'><path d='M6 3h12v3H6zm2 3h8v13a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2z'/><circle cx='12' cy='13' r='3'/></svg>",
+        category: "Tonics",
+        description: "High-potency spiritual formula calibrated for profound systemic realignments and overall internal strength."
     },
     {
         id: 8,
-        name: "Premium Ankh Leather Bag",
-        myPrice: 285.00,
-        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%23111111' stroke-width='1'><rect x='3' y='3' width='18' height='18' rx='2'/></svg>",
-        category: "Miscellaneous",
-        description: "Hand-crafted custom leather messenger tracking setup featuring the sacred Egyptian key of life emblem."
-    },
-    {
-        id: 9,
-        name: "Pure Premium Manuka Honey",
-        myPrice: 45.00,
-        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%238c7355' stroke-width='1'><path d='M12 2L2 22h20L12 2z'/></svg>",
-        category: "Supplements",
-        description: "High-potency organic medicinal manuka honey compound for profound gut realignments and immunity."
-    },
-    {
-        id: 10,
-        name: "Sacred Rose Water Distillate",
-        myPrice: 15.00,
-        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%232b70c9' stroke-width='1'><circle cx='12' cy='12' r='10'/></svg>",
-        category: "Personal Care",
-        description: "Pure steam-distilled organic rose water fluid to clear skin properties and elevate mood attributes."
-    },
-    {
-        id: 11,
-        name: "Fit & Flat Belly Tonic",
+        name: "Uterine Fibroid Tonic",
         myPrice: 120.00,
         image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%238c7355' stroke-width='1.5'><path d='M6 3h12v3H6zm2 3h8v13a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2z'/><circle cx='12' cy='13' r='3'/></svg>",
         category: "Tonics",
-        description: "A premium organic botanical fluid matrix engineered to cleanse the digestive track and balance core energy fields." [IMAGE_CONTEXT]
+        description: "Targeted botanical botanical extraction engineered to help balance feminine properties and clear blockages."
     },
     {
-        id: 12,
-        name: "Brain & Heart Balance Tonic",
+        id: 9,
+        name: "Blood & Parasite Cleanse",
         myPrice: 120.00,
-        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%23cc3333' stroke-width='1.5'><path d='M6 3h12v3H6zm2 3h8v13a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2z'/><circle cx='12' cy='13' r='3'/></svg>",
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%23111111' stroke-width='1.5'><path d='M6 3h12v3H6zm2 3h8v13a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2z'/><circle cx='12' cy='13' r='3'/></svg>",
         category: "Tonics",
-        description: "A high-vibrational cellular extraction designed to support memory retention, sharpen focus, and fortify heart properties."
-    },
-    {
-        id: 13,
-        name: "Lungs & Liver Cleansing Tonic",
-        myPrice: 120.00,
-        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%232b70c9' stroke-width='1.5'><path d='M6 3h12v3H6zm2 3h8v13a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2z'/><circle cx='12' cy='13' r='3'/></svg>",
-        category: "Tonics",
-        description: "Deep organic fluid compound formulated to flush metabolic toxicities and expand respiratory baseline capacities."
+        description: "Deep cleansing internal clearing compound designed to completely flush metabolic toxins and impurities."
     }
 ];
 
 const defaultReviews = [
-    { name: "Malik K.", rating: 5, text: "The Fit & Flat Belly tonic has completely optimized my gut tracking within a single week." },
-    { name: "Elena R.", rating: 5, text: "Excellent execution format on the ordering system. Highly secure and fast response metrics." }
+    { name: "Malik K.", rating: 5, text: "The Red X Tonic has completely optimized my energy tracking metrics." },
+    { name: "Elena R.", rating: 5, text: "Excellent execution format on the ordering layout systems." }
 ];
 
 let activeDiscountMultiplier = 1.0; 
@@ -125,15 +93,15 @@ function displayHomepageProducts() {
         : currentInventory.filter(p => p.category.toLowerCase() === currentCategoryFilter.toLowerCase());
 
     if (itemsToDisplay.length === 0) {
-        productGrid.innerHTML = `<p style="grid-column: 1/-1; padding: 40px; text-align:center; color:#999;">No items currently listed under this tier configuration.</p>`;
+        productGrid.innerHTML = "<p style='grid-column: 1/-1; padding: 40px; text-align:center; color:#999;'>No items currently listed under this tier configuration.</p>";
         return;
     }
 
     itemsToDisplay.forEach(product => {
         const finalPrice = product.myPrice * activeDiscountMultiplier;
         const priceDisplay = activeDiscountMultiplier < 1.0 
-            ? `<span style="text-decoration: line-through; color: #999; font-size: 0.85rem; font-weight:400; margin-right: 8px;">$${Number(product.myPrice).toFixed(2)}</span>$${finalPrice.toFixed(2)}`
-            : `$${Number(product.myPrice).toFixed(2)}`;
+            ? "<span style='text-decoration: line-through; color: #999; font-size: 0.85rem; font-weight:400; margin-right: 8px;'>$" + Number(product.myPrice).toFixed(2) + "</span>$" + finalPrice.toFixed(2)
+            : "$" + Number(product.myPrice).toFixed(2);
 
         const productCard = `
             <div class="product-card">
@@ -162,9 +130,9 @@ function filterCategory(categoryName) {
 
 function redirectToEmail(productName, price) {
     const businessEmail = "orionshealer.shop@gmail.com"; 
-    const subject = `New Order Request: ${productName} - Orion's Healer`;
-    const emailBody = `Hello Orion's Healer,\n\nI want to place an order for:\nProduct: ${productName}\nPrice: $${Number(price).toFixed(2)}\n\n📦 MY DETAILS:\nFull Name:\nDelivery Address:\nPhone Number:\n\nPlease send manual invoice payment processing routing metrics so I can complete this purchase.`;
-    window.location.href = `mailto:${businessEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+    const subject = "New Order Request: " + productName + " - Orion's Healer";
+    const emailBody = "Hello Orion's Healer,\n\nI want to place an order for:\nProduct: " + productName + "\nPrice: $" + Number(price).toFixed(2) + "\n\n📦 MY DETAILS:\nFull Name:\nDelivery Address:\nPhone Number:\n\nPlease send manual invoice payment processing routing metrics so I can complete this purchase.";
+    window.location.href = "mailto:" + businessEmail + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(emailBody);
 }
 
 function applyDiscountCoupon() {
@@ -184,7 +152,7 @@ function displayCommunityReviews() {
     const container = document.getElementById('reviews-container');
     if (!container) return; container.innerHTML = "";
     currentReviews.forEach(rev => {
-        container.innerHTML += `<div style="border-bottom:1px solid #eee; padding:10px 0;"><small><strong>${rev.name}</strong> (${"⭐".repeat(rev.rating)})</small><p style="font-size:0.9rem; color:#555;">"${rev.text}"</p></div>`;
+        container.innerHTML += "<div style='border-bottom:1px solid #eee; padding:10px 0;'><small><strong>" + rev.name + "</strong> (" + "★".repeat(rev.rating) + ")</small><p style='font-size:0.9rem; color:#555;'>\"" + rev.text + "\"</p></div>";
     });
 }
 
@@ -211,17 +179,16 @@ if (regForm) {
         const data = { name: document.getElementById('reg-name').value };
         localStorage.setItem('orion_user', JSON.stringify(data));
         alert("Account processing initialized!");
-        document.getElementById('nav-auth-btn').innerText = `Peace, ${data.name.split(' ')}`;
+        document.getElementById('nav-auth-btn').innerText = "Peace, " + data.name.split(' ')[0];
         switchAuthMode('login');
     });
 }
 
 window.onload = function() {
-    // Clear out any old web link cache blocks completely
     localStorage.removeItem('orion_inventory');
     currentInventory = initialProducts;
     
     displayHomepageProducts(); displayCommunityReviews();
     const u = JSON.parse(localStorage.getItem('orion_user'));
-    if (u) document.getElementById('nav-auth-btn').innerText = `Peace, ${u.name.split(' ')}`;
+    if (u) document.getElementById('nav-auth-btn').innerText = "Peace, " + u.name.split(' ')[0];
 };
