@@ -1,81 +1,96 @@
-/* --- Divider Styling --- */
-.section-divider {
-    border: 0;
-    height: 1px;
-    background: #eae6e1;
-    margin: 60px auto;
-    max-width: 1200px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orion's Healer | Spiritual Wellness Shop & Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-/* --- Blog Container Area --- */
-.blog-container {
-    max-width: 1200px;
-    margin: 0 auto 80px auto;
-    padding: 0 20px;
-}
+    <!-- Top Navigation Bar -->
+    <header class="site-header">
+        <div class="logo">ORION'S HEALER</div>
+        <nav class="main-nav">
+            <a href="#shop-section">Shop</a>
+            <a href="#blog-section">Spiritual Blog</a>
+            <a href="#auth-section" id="nav-auth-btn">Login / Register</a>
+        </nav>
+    </header>
 
-.blog-container h2 {
-    text-align: center;
-    font-size: 1.8rem;
-    color: #333333;
-    font-weight: 400;
-    margin-bottom: 10px;
-}
+    <!-- Main Store Area -->
+    <main class="store-container" id="shop-section">
+        <h1>Featured Spiritual Products</h1>
+        <section class="product-grid" id="products">
+            <p>Our inventory is loading...</p>
+        </section>
+    </main>
 
-.blog-subtitle {
-    text-align: center;
-    color: #8c7355;
-    font-style: italic;
-    margin-bottom: 40px;
-    font-size: 0.95rem;
-}
+    <!-- Divider Line -->
+    <hr class="section-divider">
 
-/* --- Blog Card Grid System --- */
-.blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-}
+    <!-- Membership Authentication Section -->
+    <section class="auth-container" id="auth-section">
+        <!-- Login Form Block -->
+        <div class="auth-box" id="login-box">
+            <h2>Welcome Back, Seeker</h2>
+            <p class="auth-subtitle">Enter your sanctuary details to continue your journey</p>
+            <form id="login-form">
+                <input type="email" placeholder="Your Email Address" required class="auth-input">
+                <input type="password" placeholder="Your Password" required class="auth-input">
+                <button type="submit" class="auth-submit-btn">Enter Sanctuary</button>
+            </form>
+            <p class="auth-switch">New to the platform? <span onclick="switchAuthMode('register')">Create Account</span></p>
+            <p class="auth-switch forgot-pass" onclick="recoverPassword()">Forgot Password?</p>
+        </div>
 
-.blog-card {
-    background-color: #ffffff;
-    border: 1px solid #eae6e1;
-    padding: 30px;
-    border-radius: 4px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-}
+        <!-- Registration Form Block (Hidden by default until clicked) -->
+        <div class="auth-box hidden" id="register-box">
+            <h2>Join Our Sacred Circle</h2>
+            <p class="auth-subtitle">Create an account to personalize your spiritual growth</p>
+            <form id="register-form">
+                <input type="text" id="reg-name" placeholder="Full Name" required class="auth-input">
+                <input type="email" id="reg-email" placeholder="Email Address" required class="auth-input">
+                <input type="tel" id="reg-phone" placeholder="Phone Number / WhatsApp" required class="auth-input">
+                <input type="password" id="reg-password" placeholder="Create Password" required class="auth-input">
+                
+                <label class="select-label">What is your primary spiritual goal?</label>
+                <select id="reg-goal" class="auth-input text-select">
+                    <option value="Mental Clarity">Clear Mental Fog & Anxiety</option>
+                    <option value="Physical Vitality">Boost Physical Energy & Health</option>
+                    <option value="Deep Meditation">Deepend Meditative States</option>
+                    <option value="Space Cleansing">Clear Negative Energies from My Home</option>
+                </select>
 
-.blog-meta {
-    font-size: 0.75rem;
-    color: #999999;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
-}
+                <button type="submit" class="auth-submit-btn">Register & Unlock VIP Access</button>
+            </form>
+            <p class="auth-switch">Already registered? <span onclick="switchAuthMode('login')">Login Here</span></p>
+        </div>
+    </section>
 
-.blog-card h3 {
-    font-size: 1.3rem;
-    color: #2b2b2b;
-    margin-bottom: 15px;
-    font-weight: 500;
-    line-height: 1.4;
-}
+    <!-- Divider Line -->
+    <hr class="section-divider">
 
-.blog-card p {
-    color: #666666;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
+    <!-- Community Blog Area -->
+    <section class="blog-container" id="blog-section">
+        <h2>Spiritual Wisdom & Community Experiences</h2>
+        <p class="blog-subtitle">A sacred space to learn, grow, and share our collective journeys.</p>
+        <div class="blog-grid">
+            <article class="blog-card">
+                <div class="blog-meta">July 24, 2026 • Rituals</div>
+                <h3>The Spiritual Benefits of Daily Sea Moss Consumption</h3>
+                <p>Sea moss is more than a physical supplement. Discover how updating your physical vessel unlocks deeper meditative states and clears mental fog...</p>
+                <a href="#" class="read-more-link">Read Article →</a>
+            </article>
+            <article class="blog-card">
+                <div class="blog-meta">July 22, 2026 • Healing</div>
+                <h3>Clearing Negative Energies with Palo Santo</h3>
+                <p>Understanding the ancient lineage of holy wood. Learn the precise intentions to hold while smudging your room to attract high-vibrational guidance...</p>
+                <a href="#" class="read-more-link">Read Article →</a>
+            </article>
+        </div>
+    </section>
 
-.read-more-link {
-    color: #8c7355;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
-
-.read-more-link:hover {
-    color: #2b2b2b;
-}
+    <script src="app.js"></script>
+</body>
+</html>

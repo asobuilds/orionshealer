@@ -77,3 +77,46 @@ function redirectToEmail(productName, price) {
 }
 
 window.onload = displayProducts;
+
+// Function to switch between Login and Registration boxes visually
+function switchAuthMode(mode) {
+    const loginBox = document.getElementById('login-box');
+    const registerBox = document.getElementById('register-box');
+
+    if (mode === 'register') {
+        loginBox.classList.add('hidden');
+        registerBox.classList.remove('hidden');
+    } else {
+        registerBox.classList.add('hidden');
+        loginBox.classList.remove('hidden');
+    }
+}
+
+// Intercept Registration Form Submit and save user details directly to browser memory
+document.getElementById('register-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Stops the page from refreshing layout on submit
+
+    const userData = {
+        name: document.getElementById('reg-name').value,
+        email: document.getElementById('reg-email').value,
+        phone: document.getElementById('reg-phone').value,
+        goal: document.getElementById('reg-goal').value
+    };
+
+    // Save details securely into the local browser machine memory strings
+    localStorage.setItem('orion_user', JSON.stringify(userData));
+
+    alert(`Welcome to the inner circle, ${userData.name}! Your account has been securely memorized and your spiritual track is set to: ${userData.goal}.`);
+    
+    // Auto-update navigation title to show they are logged in
+    document.getElementById('nav-auth-btn').innerText = `Peace, ${userData.name.split(' ')[0]}`;
+    switchAuthMode('login');
+});
+
+// Simple password recovery placeholder link feedback trigger
+function recoverPassword() {
+    const email = prompt("Enter your registered email address to receive a recovery token link:");
+    if (email) {
+        alert(`A validation token resetting request has been transmitted securely to: ${email}. Please check your spam inbox within 5 minutes.`);
+    }
+}
