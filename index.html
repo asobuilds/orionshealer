@@ -34,9 +34,31 @@
         <a href="#about-section">About</a>
         <a href="#" onclick="toggleCartDrawer(true)">Cart</a>
         <a href="#" onclick="toggleCartDrawer(true)">Checkout</a>
-        <a href="#auth-section">My account</a>
         <a href="#shop-section">Shop</a>
     </nav>
+
+    <!-- Full-Screen Interactive Product & Blog Detail Page Overlay -->
+    <div id="detail-overlay-page" class="detail-page-overlay hidden">
+        <div class="detail-page-box">
+            <button class="close-detail-page-btn" onclick="toggleDetailOverlayPage(false)">✖ Close Explorer Window</button>
+            <div class="detail-page-layout">
+                <div class="detail-page-left">
+                    <img id="detail-page-image" src="" alt="Product Graphic">
+                </div>
+                <div class="detail-page-right">
+                    <span id="detail-page-category" class="detail-category-tag">Category</span>
+                    <h2 id="detail-page-title">Product Title Display Name</h2>
+                    <p id="detail-page-price" class="detail-price-text">$0.00</p>
+                    <div class="detail-page-body">
+                        <h3>Spiritual Breakdown & Composition:</h3>
+                        <p id="detail-page-description">Detailed descriptive textual information variables parsing directly from our database layer matrices into your viewport frame lines cleanly...</p>
+                    </div>
+                    <!-- Live Redirection URL Button Anchor -->
+                    <a id="detail-page-redirect-url" href="#" target="_blank" class="external-redirect-link-btn">🔗 View External Original Source</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Floating Shopping Cart Sliding Sidebar Overlay Drawer -->
     <div id="cart-drawer" class="cart-drawer-overlay hidden">
@@ -44,15 +66,13 @@
             <div class="cart-drawer-header">
                 <h3>Your Sacred Basket</h3>
                 <div style="display: flex; gap: 15px; align-items: center;">
-                    <button class="clear-basket-btn" onclick="clearEntireBasket()" style="background: none; border: none; font-size: 0.85rem; color: #999; cursor: pointer; text-decoration: underline;">Clear All</button>
+                    <button class="clear-basket-btn" onclick="clearEntireBasket()">Clear All</button>
                     <button class="close-cart-btn" onclick="toggleCartDrawer(false)">✖ Close</button>
                 </div>
             </div>
-            
             <div id="cart-items-list" class="cart-items-body">
                 <p style="text-align: center; color: #999; margin-top: 40px;">Your basket is currently empty.</p>
             </div>
-
             <div class="cart-drawer-footer">
                 <div class="cart-summary-row">
                     <span>Subtotal:</span>
@@ -65,9 +85,7 @@
 
     <!-- Master Content Workspace Grid System -->
     <div class="master-layout-wrapper">
-        
         <main class="left-content-column">
-            
             <section class="about-sanctuary-card" id="about-section">
                 <h2>Our Spiritual Mission</h2>
                 <p>Welcome to <strong>Orion's Healer</strong>. We are a dedicated digital sanctuary calibrated to assist you in cleansing your physical vessel and elevating your internal conscious light. We bridge ancient botanical wisdom with modern seekers to help you dissolve toxicities and anchor absolute peace.</p>
@@ -91,7 +109,6 @@
             <section class="reviews-display-module" id="reviews-section">
                 <h3>Circle Feedback & Breakthroughs</h3>
                 <div id="reviews-container"></div>
-                
                 <form id="review-form" style="margin-top: 20px;">
                     <input type="text" id="rev-user" placeholder="Your Name" required class="auth-input">
                     <select id="rev-rating" class="auth-input text-select">
@@ -117,10 +134,8 @@
                 <li><button class="sidebar-cat-link" onclick="filterCategory('Miscellaneous')">Miscellaneous</button></li>
             </ul>
         </aside>
-
     </div>
 
-    <!-- Sticky Bottom Alert Strip -->
     <footer class="bottom-alert-banner">
         <span>⚠️ ALL SALES ARE FINAL. NO REFUNDS.</span>
         <button class="dismiss-banner-btn" onclick="this.parentElement.style.display='none'">✖ Dismiss</button>

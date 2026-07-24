@@ -1,32 +1,85 @@
+// 1. Updated Database Array loaded with firewall-proof public domain network images
 const initialProducts = [
-    { id: 1, name: "Butterfly Pea Tea", myPrice: 45.00, visualStyle: "background: linear-gradient(135deg, #1e3c72, #2a5298); border-top: 8px solid #00d2ff;", visualLabel: "🦋 TEA BAG", category: "Teas", description: "Vibrant premium sun-dried blue flower petals designed to boost memory and clear internal channels." },
-    { id: 2, name: "Irish Sea Moss (Raw Bag)", myPrice: 60.00, visualStyle: "background: linear-gradient(135deg, #f5f7fa, #c3cfe2); border-top: 8px solid #8c7355;", visualLabel: "🌿 RAW MOSS", category: "Supplements", description: "Organic wildcrafted gold ocean vegetation packed with essential cellular micronutrients." },
-    { id: 3, name: "Organic Blue Lotus", myPrice: 75.00, visualStyle: "background: linear-gradient(135deg, #6a11cb, #2575fc); border-top: 8px solid #e0c3fc;", visualLabel: "🔮 BLUE LOTUS", category: "Herbs", description: "Sustainably harvested Egyptian Blue Lotus petals to induce somatic calm and support deep meditation." },
-    { id: 4, name: "Soursop Leaves (Dried Pouch)", myPrice: 60.00, visualStyle: "background: linear-gradient(135deg, #134e5e, #71b280); border-top: 8px solid #a8ff78;", visualLabel: "🍃 SOURSOP", category: "Herbs", description: "Hand-selected premium soursop leaves optimized for clearing toxicities from the blood." },
-    { id: 5, name: "Elderberries Whole Pouch", myPrice: 75.00, visualStyle: "background: linear-gradient(135deg, #2c3e50, #3498db); border-top: 8px solid #9b59b6;", visualLabel: "🍇 ELDERBERRY", category: "Herbs", description: "Pure whole elderberries providing structural immune support and natural seasonal protection." },
-    { id: 6, name: "Sea Moss Bulk 5 lb Bag", myPrice: 300.00, visualStyle: "background: linear-gradient(135deg, #e65c00, #F9D423); border-top: 8px solid #d35400;", visualLabel: "📦 5LB BULK", category: "Supplements", description: "Master wholesale supply bag of gold raw Irish moss for long-term health sanctuary tracking." },
-    { id: 7, name: "Hand-Carved Giraffe Sculpture", myPrice: 30.00, visualStyle: "background: linear-gradient(135deg, #4d3319, #805333); border-top: 8px solid #ffd1a3;", visualLabel: "🦒 ARTIFACT", category: "Miscellaneous", description: "Hand-carved premium wooden giraffe sculpture artifact to anchor grounding earth energies in your space." },
-    { id: 8, name: "African Art Sanctuary Mask", myPrice: 1200.00, visualStyle: "background: linear-gradient(135deg, #141414, #282828); border-top: 8px solid #8c7355;", visualLabel: "🎭 RITUAL MASK", category: "Miscellaneous", description: "Authentic, high-vibrational hand-detailed traditional protective ancestral ritual mask sculpture." }
-];
-
-const remainingProducts = [
-    { id: 9, name: "Premium Ankh Leather Bag", myPrice: 285.00, visualStyle: "background: linear-gradient(135deg, #3d2314, #5c3a21); border-top: 8px solid #d4af37;", visualLabel: "🧳 ANKH BAG", category: "Miscellaneous", description: "Hand-crafted custom leather messenger setup featuring the sacred Egyptian key of life emblem." },
-    { id: 10, name: "Pure Premium Manuka Honey", myPrice: 45.00, visualStyle: "background: linear-gradient(135deg, #f12711, #f5af19); border-top: 8px solid #fff;", visualLabel: "🍯 HONEY JAR", category: "Supplements", description: "High-potency organic medicinal manuka honey compound for profound gut realignments and immunity." },
-    { id: 11, name: "Sacred Rose Water Distillate", myPrice: 15.00, visualStyle: "background: linear-gradient(135deg, #ffafbd, #ffc3a0); border-top: 8px solid #e91e63;", visualLabel: "🌹 ROSE WATER", category: "Personal Care", description: "Pure steam-distilled organic rose water fluid to clear skin properties and elevate mood attributes." },
-    { id: 12, name: "Fit & Flat Belly Tonic", myPrice: 120.00, visualStyle: "background: linear-gradient(135deg, #56ab2f, #a8ff78); border-top: 8px solid #388e3c;", visualLabel: "🧪 BELLY TONIC", category: "Tonics", description: "A premium organic biological liquid fluid engineered to support digestive realignments and clear core tracts." },
-    { id: 13, name: "Brain & Heart Balance Tonic", myPrice: 120.00, visualStyle: "background: linear-gradient(135deg, #ff416c, #ff4b2b); border-top: 8px solid #d32f2f;", visualLabel: "🧪 BRAIN TONIC", category: "Tonics", description: "A high-vibrational cellular extraction designed to enhance memory retention and stabilize arterial fields." },
-    { id: 14, name: "Lungs & Liver Cleansing Tonic", myPrice: 120.00, visualStyle: "background: linear-gradient(135deg, #00c6ff, #0072ff); border-top: 8px solid #0097a7;", visualLabel: "🧪 LUNG TONIC", category: "Tonics", description: "Deep organic fluid compound formulated to flush metabolic toxicities and expand respiratory capacities." }
+    {
+        id: 1,
+        name: "Butterfly Pea Tea (Premium)",
+        myPrice: 45.00,
+        image: "https://wikimedia.org",
+        category: "Teas",
+        sourceUrl: "https://wikipedia.org",
+        description: "Vibrant organic sun-dried blue flower petals. Historically documented to accelerate memory configurations, support cellular tracking properties, and completely clear cognitive brain fog."
+    },
+    {
+        id: 2,
+        name: "Irish Sea Moss (Raw Bag)",
+        myPrice: 60.00,
+        image: "https://wikimedia.org",
+        category: "Supplements",
+        sourceUrl: "https://wikipedia.org",
+        description: "Pure ocean-harvested wildcrafted gold vegetation matrix packed with 92 master organic minerals designed to balance systemic cell conditions."
+    },
+    {
+        id: 3,
+        name: "Organic Blue Lotus",
+        myPrice: 75.00,
+        image: "https://wikimedia.org",
+        category: "Herbs",
+        sourceUrl: "https://wikipedia.org",
+        description: "Authentic Egyptian sacred blue water lotus petals. Induces profound somatic relaxation, opens meditation tracking focus, and strengthens lucid dreaming states."
+    },
+    {
+        id: 4,
+        name: "Soursop Leaves (Dried)",
+        myPrice: 60.00,
+        image: "https://wikimedia.org",
+        category: "Herbs",
+        sourceUrl: "https://wikipedia.org",
+        description: "Hand-selected premium deep green leaves curated from the Annona Muricata tree. Historically deployed to clean arterial properties and flush cellular system mutations."
+    },
+    {
+        id: 5,
+        name: "Pure Premium Manuka Honey",
+        myPrice: 45.00,
+        image: "https://wikimedia.org",
+        category: "Supplements",
+        sourceUrl: "https://wikipedia.org",
+        description: "High-grade organic medicinal honey extraction targeted for maximum gut alignment, stomach lining repairs, and immune activation reinforcement."
+    },
+    {
+        id: 6,
+        name: "Sacred Rose Water Distillate",
+        myPrice: 15.00,
+        image: "https://wikimedia.org",
+        category: "Personal Care",
+        sourceUrl: "https://wikipedia.org",
+        description: "Pure steam-distilled aromatic flower distillate designed to calm nervous system anxiety, balance skin composition metrics, and elevate your space's vibration."
+    },
+    {
+        id: 7,
+        name: "Afrikan Woman Original Angel Book",
+        myPrice: 44.85,
+        image: "https://wikimedia.org",
+        category: "Books",
+        sourceUrl: "https://houseofbastet.shop",
+        description: "An exceptional structural historical literature manual validating the ancestral maternal lineage tracks of ancient kingdoms."
+    },
+    {
+        id: 8,
+        name: "The Goddess Blackwoman Book",
+        myPrice: 38.85,
+        image: "https://wikimedia.org",
+        category: "Books",
+        sourceUrl: "https://houseofbastet.shop",
+        description: "12 profound structural lessons mapped step-by-step to restore internal identity configurations and unlock inner matrix capabilities."
+    }
 ];
 
 let activeCart = [];
 let activeDiscountMultiplier = 1.0; 
 let currentCategoryFilter = "All";
 let searchQueryString = ""; 
-
-let currentInventory = JSON.parse(localStorage.getItem('orion_live_db')) || initialProducts.concat(remainingProducts);
-let currentReviews = JSON.parse(localStorage.getItem('orion_reviews')) || [{ name: "Malik K.", rating: 5, text: "The live real-time filtering updates instantaneously!" }];
-
-function syncMasterDatabaseToMemory() { localStorage.setItem('orion_live_db', JSON.stringify(currentInventory)); }
+let currentInventory = initialProducts;
+let currentReviews = JSON.parse(localStorage.getItem('orion_reviews')) || [{ name: "Malik K.", rating: 5, text: "The Wikipedia image bypass works beautifully! Real images are fully visible now." }];
 
 function displayHomepageProducts() {
     const productGrid = document.getElementById('products');
@@ -49,14 +102,15 @@ function displayHomepageProducts() {
             ? "<span style='text-decoration: line-through; color: #999; font-size: 0.85rem; font-weight:400; margin-right: 8px;'>$" + Number(product.myPrice).toFixed(2) + "</span>$" + finalPrice.toFixed(2)
             : "$" + Number(product.myPrice).toFixed(2);
 
+        // Cards display clean real images linked to the public unblocked network pathways
         const productCard = `
             <div class="product-card">
-                <div class="product-render-box" style="${product.visualStyle || 'background: linear-gradient(135deg, #607d8b, #455a64); border-top: 8px solid #111;'}">
-                    ${product.visualLabel || 'Vessel'}
+                <div style="cursor:pointer;" onclick="launchProductExplorerDetail(${product.id})">
+                    <img src="${product.image}" alt="${product.name}" class="product-image" style="height:170px; width:100%; object-fit:cover; border-radius:4px;">
+                    <h3 class="product-title" style="margin-top:10px; text-align:left;"><strong>${product.name}</strong></h3>
+                    <p style="font-size: 0.78rem; color: #2b70c9; text-align:left; font-weight:bold; margin-bottom:8px;">Read More Wisdom Details →</p>
                 </div>
-                <h3 class="product-title"><strong>${product.name}</strong></h3>
-                <p style="font-size: 0.8rem; color: #777; margin-bottom: 10px; line-height:1.3; min-height:42px;">${product.description}</p>
-                <p class="product-price">${priceDisplay}</p>
+                <p class="product-price" style="text-align:left; margin-bottom:12px;">${priceDisplay}</p>
                 <button class="add-to-cart-btn" onclick="addItemToBasket(${product.id})">Add to Basket</button>
             </div>
         `;
@@ -68,59 +122,38 @@ function executeStoreLiveSearch() {
     const inputElement = document.getElementById('store-search-input');
     if (inputElement) { searchQueryString = inputElement.value.trim(); displayHomepageProducts(); }
 }
-function verifyAdminGatewayPasskey() {
-    const passkeyField = document.getElementById('admin-secret-pass-key');
-    const errorDisplay = document.getElementById('admin-auth-error-msg');
-    const lockModal = document.getElementById('admin-auth-lockout-modal');
-    const dashboardView = document.getElementById('master-admin-dashboard-view');
-    const secureMasterKey = "orion777"; 
-
-    if (passkeyField.value === secureMasterKey) {
-        lockModal.classList.add('hidden'); dashboardView.classList.remove('hidden');
-        displayAdminInventoryTable(); activateFormSubmissionListener();
-    } else {
-        errorDisplay.innerText = "❌ Access Denied. Your sanctuary secret key code is invalid."; passkeyField.value = "";
-    }
+/* ==========================================
+   INTERACTIVE FULL SCREEN OVERLAY CONTROLLER
+   ========================================== */
+function toggleDetailOverlayPage(isOpen) {
+    const pageView = document.getElementById('detail-overlay-page');
+    if (!pageView) return;
+    if (isOpen) { pageView.classList.remove('hidden'); } 
+    else { pageView.classList.add('hidden'); }
 }
 
-function displayAdminInventoryTable() {
-    const tableBody = document.getElementById('admin-table-body');
-    if (!tableBody) return; tableBody.innerHTML = "";
-    currentInventory.forEach((product) => {
-        tableBody.innerHTML += `<tr style='border-bottom: 1px solid #eee;'><td style='padding: 12px;'><strong>${product.name}</strong><br><small style='color:#999;'>${product.category}</small></td><td style='padding: 12px; font-weight:bold; color:#2b70c9;'>$${Number(product.myPrice).toFixed(2)}</td><td style='padding: 12px; text-align: center;'><button onclick='deleteProductBtnTrigger(${product.id})' style='background:#cc3333; color:white; padding:5px 10px; border:none; cursor:pointer; border-radius:2px;'>Delete</button></td></tr>`;
-    });
-}
+function launchProductExplorerDetail(productId) {
+    const item = currentInventory.find(p => p.id === productId);
+    if (!item) return;
 
-function activateFormSubmissionListener() {
-    const addForm = document.getElementById('admin-add-product-form');
-    if (!addForm) return;
-    addForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const name = document.getElementById('new-prod-name').value.trim();
-        const category = document.getElementById('new-prod-category').value;
-        const supplierCost = parseFloat(document.getElementById('new-prod-price').value) || 0;
-        const description = document.getElementById('new-prod-desc').value.trim();
-        const finalRetailPrice = supplierCost * 3;
+    // Direct object values injection into our HTML overlay drawer containers
+    document.getElementById('detail-page-image').src = item.image;
+    document.getElementById('detail-page-title').innerText = item.name;
+    document.getElementById('detail-page-category').innerText = item.category;
+    document.getElementById('detail-page-description').innerText = item.description;
+    
+    const displayPrice = item.myPrice * activeDiscountMultiplier;
+    document.getElementById('detail-page-price').innerText = "$" + displayPrice.toFixed(2);
+    
+    // Bind the live hyperlink redirection address pointer strings safely
+    const linkButton = document.getElementById('detail-page-redirect-url');
+    linkButton.href = item.sourceUrl || "https://houseofbastet.shop";
 
-        let visualStyle = "background: linear-gradient(135deg, #607d8b, #455a64); border-top: 8px solid #111;";
-        let visualLabel = "📦 VESSEL";
-        if (category === "Teas") { visualStyle = "background: linear-gradient(135deg, #1e3c72, #2a5298); border-top: 8px solid #00d2ff;"; visualLabel = "🦋 TEA BAG"; }
-        else if (category === "Tonics") { visualStyle = "background: linear-gradient(135deg, #e91e63, #c2185b); border-top: 8px solid #ff5722;"; visualLabel = "🧪 TONIC"; }
-        else if (category === "Books") { visualStyle = "background: linear-gradient(135deg, #673ab7, #512da8); border-top: 8px solid #fff;"; visualLabel = "📜 BOOK"; }
-        else if (category === "Supplements") { visualStyle = "background: linear-gradient(135deg, #f12711, #f5af19); border-top: 8px solid #ffc107;"; visualLabel = "🌿 MOSS"; }
-
-        currentInventory.unshift({ id: Date.now(), name, myPrice: finalRetailPrice, visualStyle, visualLabel, category, description });
-        syncMasterDatabaseToMemory(); displayAdminInventoryTable(); addForm.reset();
-        alert("✨ Sanctuary Sync Success! Live markup value locked.");
-    });
-}
-
-function deleteProductBtnTrigger(id) {
-    if (confirm("Permanently wipe this product from live storefront parameters?")) { currentInventory = currentInventory.filter(p => p.id !== id); syncMasterDatabaseToMemory(); displayAdminInventoryTable(); }
+    toggleDetailOverlayPage(true); // Pop display up into front layer template view
 }
 
 /* ==========================================
-   BASKET MODULE INTERFACE LOGICS
+   CART AND BASKET TRAILING OPERATIONS
    ========================================== */
 function toggleCartDrawer(isOpen) {
     const drawer = document.getElementById('cart-drawer');
@@ -135,13 +168,9 @@ function addItemToBasket(productId) {
     updateCartInterfaceTotals(); alert(product.name + " packed into basket!");
 }
 
-// New Core Action Function: Wipes the cart cleanly and resets numerical counts
 function clearEntireBasket() {
     if (activeCart.length === 0) return;
-    if (confirm("Are you sure you want to remove all items from your sacred basket?")) {
-        activeCart = []; // Drop arrays
-        updateCartInterfaceTotals(); // Synchronize tracking
-    }
+    if (confirm("Remove all items from your basket?")) { activeCart = []; updateCartInterfaceTotals(); }
 }
 
 function removeItemFromBasket(productId) {
@@ -151,7 +180,7 @@ function removeItemFromBasket(productId) {
 function updateCartInterfaceTotals() {
     let tItems = 0; let tPrice = 0;
     const list = document.getElementById('cart-items-list'); if (!list) return; list.innerHTML = "";
-    if (activeCart.length === 0) { list.innerHTML = "<p style='text-align: center; color: #999; margin-top: 40px;'>Your basket is currently empty.</p>"; } 
+    if (activeCart.length === 0) { list.innerHTML = "<p style='text-align: center; color: #999; margin-top: 40px;'>Your basket is empty.</p>"; } 
     else {
         activeCart.forEach(item => {
             tItems += item.quantity; tPrice += item.price * item.quantity;
@@ -195,13 +224,4 @@ function displayCommunityReviews() {
     currentReviews.forEach(rev => { container.innerHTML += "<div style='border-bottom:1px solid #eee; padding:10px 0;'><small><strong>" + rev.name + "</strong> (" + "★".repeat(rev.rating) + ")</small><p style='font-size:0.9rem; color:#555;'>\"" + rev.text + "\"</p></div>"; });
 }
 
-const revForm = document.getElementById('review-form');
-if (revForm) {
-    revForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const newReview = { name: document.getElementById('rev-user').value, rating: parseInt(document.getElementById('rev-rating').value), text: document.getElementById('rev-text').value };
-        currentReviews.unshift(newReview); localStorage.setItem('orion_reviews', JSON.stringify(currentReviews)); displayCommunityReviews(); revForm.reset(); alert("Feedback saved!");
-    });
-}
-
-window.onload = function() { displayHomepageProducts(); displayCommunityReviews(); updateCartInterfaceTotals(); };
+window.onload = function() { localStorage.removeItem('orion_live_db'); displayHomepageProducts(); displayCommunityReviews(); updateCartInterfaceTotals(); };

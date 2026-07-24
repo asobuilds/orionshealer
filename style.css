@@ -361,3 +361,127 @@ body {
         transform: translate3d(-100%, 0, 0);
     }
 }
+/* --- Full-Screen Interactive Detail Explorer Page --- */
+.detail-page-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 20000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.detail-page-box {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 850px;
+    max-height: 90vh;
+    border-radius: 6px;
+    padding: 30px;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.close-detail-page-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #111;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    border-radius: 4px;
+}
+
+.detail-page-layout {
+    display: flex;
+    gap: 35px;
+    margin-top: 40px;
+}
+
+.detail-page-left {
+    width: 40%;
+    flex-shrink: 0;
+}
+
+.detail-page-left img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+.detail-page-right {
+    flex-grow: 1;
+}
+
+.detail-category-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #2b70c9;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.detail-page-right h2 {
+    font-size: 1.8rem;
+    color: #222;
+    margin: 5px 0 15px 0;
+}
+
+.detail-price-text {
+    font-size: 1.5rem;
+    color: #111;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.detail-page-body h3 {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detail-page-body p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.external-redirect-link-btn {
+    display: inline-block;
+    background-color: #f5f5f5;
+    color: #111;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.external-redirect-link-btn:hover {
+    background-color: #eaeaea;
+    color: #2b70c9;
+}
+
+/* Mobile responsive collapse breakpoints */
+@media (max-width: 650px) {
+    .detail-page-layout { flex-direction: column; }
+    .detail-page-left { width: 100%; }
+    .detail-page-left img { height: 200px; }
+}
