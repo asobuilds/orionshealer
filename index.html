@@ -3,135 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orion's Healer | Spiritual Wellness Shop & Blog</title>
+    <title>Orion's Healer | Spiritual Wellness Shop</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Top Navigation Bar -->
+    <!-- Main Navigation Bar (Replicating Reference Site Header) -->
     <header class="site-header">
-        <div class="logo">ORION'S HEALER</div>
-        <nav class="main-nav">
-            <a href="#shop-section">Shop</a>
-            <a href="#coupon-section">Promo Offers</a>
-            <a href="#reviews-section">Community Reviews</a>
-            <a href="#blog-section">Spiritual Blog</a>
-            <a href="#auth-section" id="nav-auth-btn">Login / Register</a>
-        </nav>
+        <div class="logo-title">The Orion's Healer</div>
+        <div class="header-right">
+            <div class="search-bar-container">
+                <input type="text" placeholder="Search products..." class="header-search-input">
+            </div>
+            <div class="cart-total-display">
+                <span>$0.00</span> <small style="color: #999;">0 items</small> 🛒
+            </div>
+        </div>
     </header>
 
-    <!-- Main Store Area -->
-    <main class="store-container" id="shop-section">
-        <h1>Featured Spiritual Products</h1>
-        <section class="product-grid" id="products">
-            <p>Our inventory is loading...</p>
-        </section>
-    </main>
+    <!-- Sub-Navigation Links Panel -->
+    <nav class="sub-nav-links">
+        <a href="#about-section">Home</a>
+        <a href="#about-section">About</a>
+        <a href="#shop-section">Cart</a>
+        <a href="#shop-section">Checkout</a>
+        <a href="#auth-section">My account</a>
+        <a href="#shop-section">Shop</a>
+    </nav>
 
-    <!-- Promo Coupon Engine Section -->
-    <section class="store-container" id="coupon-section" style="max-width: 500px; margin-top: 20px;">
-        <div class="auth-box" style="border: 2px dashed #8c7355; padding: 25px;">
-            <h3 style="font-size: 1.2rem; color: #333; margin-bottom: 5px; font-weight: 500;">Have a Spiritual Promo Code?</h3>
-            <p style="font-size: 0.8rem; color: #8c7355; margin-bottom: 15px;">Enter your coupon to apply active price discounts instantly</p>
-            <div style="display: flex; gap: 10px;">
-                <input type="text" id="coupon-input" placeholder="e.g., SEEKER10" class="auth-input" style="margin-bottom: 0; text-transform: uppercase;">
-                <button onclick="applyDiscountCoupon()" class="add-to-cart-btn" style="width: auto; padding: 0 25px;">Apply</button>
-            </div>
-            <p id="coupon-message" style="font-size: 0.85rem; margin-top: 10px; font-weight: 600;"></p>
-        </div>
-    </section>
-
-    <!-- Divider Line -->
-    <hr class="section-divider">
-
-    <!-- Community Reviews Section -->
-    <section class="store-container" id="reviews-section">
-        <h2 style="text-align: center; font-size: 1.8rem; font-weight: 400; margin-bottom: 10px;">Customer Experiences & Feedback</h2>
-        <p style="text-align: center; color: #8c7355; margin-bottom: 40px; font-style: italic;">Real feedback from seekers within our sacred circle.</p>
+    <!-- Master Content Workspace Grid System (Main Left + Sidebar Right) -->
+    <div class="master-layout-wrapper">
         
-        <!-- Live Reviews List -->
-        <div class="blog-grid" id="reviews-container" style="margin-bottom: 40px;">
-            <!-- Pre-loaded reviews will inject here via JavaScript -->
-        </div>
+        <!-- Left Column: Mission Content and Active Storefront Listings -->
+        <main class="left-content-column">
+            
+            <!-- About Us Strategic Branding Box -->
+            <section class="about-sanctuary-card" id="about-section">
+                <h2>Our Spiritual Mission</h2>
+                <p>Welcome to <strong>Orion's Healer</strong>. We are a dedicated digital sanctuary calibrated to assist you in cleansing your physical vessel and elevating your internal conscious light. We bridge ancient botanical wisdom with modern seekers to help you dissolve toxicities and anchor absolute peace.</p>
+            </section>
 
-        <!-- Write a Review Form -->
-        <div class="auth-box" style="max-width: 600px; margin: 0 auto;">
-            <h3>Share Your Experience</h3>
-            <p class="auth-subtitle">Help other seekers discover their healing track</p>
-            <form id="review-form">
-                <input type="text" id="rev-user" placeholder="Your Name" required class="auth-input">
-                <select id="rev-rating" class="auth-input text-select">
-                    <option value="5">⭐⭐⭐⭐⭐ Excellent (5 Stars)</option>
-                    <option value="4">⭐⭐⭐⭐ Very Good (4 Stars)</option>
-                    <option value="3">⭐⭐⭐ Good (3 Stars)</option>
-                </select>
-                <textarea id="rev-text" placeholder="Detail your spiritual breakthrough or product feedback..." required class="auth-input" style="height: 90px; padding: 12px; resize: none;"></textarea>
-                <button type="submit" class="auth-submit-btn">Submit Feedback</button>
-            </form>
-        </div>
-    </section>
+            <!-- Storefront Target Section -->
+            <section id="shop-section">
+                <div class="product-grid" id="products">
+                    <p>Loading the storefront inventory layer...</p>
+                </div>
+            </section>
+            <!-- Interactive Promo Discount Block -->
+            <section class="coupon-activation-box" id="coupon-section">
+                <h3>Spiritual Coupon Verification</h3>
+                <div style="display: flex; gap: 10px; margin-top: 10px;">
+                    <input type="text" id="coupon-input" placeholder="ENTER CODE" class="auth-input" style="margin-bottom: 0;">
+                    <button onclick="applyDiscountCoupon()" class="add-to-cart-btn" style="width: auto; padding: 0 20px;">Verify</button>
+                </div>
+                <p id="coupon-message" style="font-size: 0.85rem; margin-top: 8px; font-weight: 600;"></p>
+            </section>
 
-    <!-- Divider Line -->
-    <hr class="section-divider">
-
-    <!-- Membership Authentication Section -->
-    <section class="auth-container" id="auth-section">
-        <div class="auth-box" id="login-box">
-            <h2>Welcome Back, Seeker</h2>
-            <p class="auth-subtitle">Enter your sanctuary details to continue your journey</p>
-            <form id="login-form">
-                <input type="email" placeholder="Your Email Address" required class="auth-input">
-                <input type="password" placeholder="Your Password" required class="auth-input">
-                <button type="submit" class="auth-submit-btn">Enter Sanctuary</button>
-            </form>
-            <p class="auth-switch">New to the platform? <span onclick="switchAuthMode('register')">Create Account</span></p>
-            <p class="auth-switch forgot-pass" onclick="recoverPassword()">Forgot Password?</p>
-        </div>
-
-        <div class="auth-box hidden" id="register-box">
-            <h2>Join Our Sacred Circle</h2>
-            <p class="auth-subtitle">Create an account to personalize your spiritual growth</p>
-            <form id="register-form">
-                <input type="text" id="reg-name" placeholder="Full Name" required class="auth-input">
-                <input type="email" id="reg-email" placeholder="Email Address" required class="auth-input">
-                <input type="tel" id="reg-phone" placeholder="Phone Number / WhatsApp" required class="auth-input">
-                <input type="password" id="reg-password" placeholder="Create Password" required class="auth-input">
+            <!-- Community Experience Submissions -->
+            <section class="reviews-display-module" id="reviews-section">
+                <h3>Circle Feedback & Breakthroughs</h3>
+                <div id="reviews-container"></div>
                 
-                <label class="select-label">What is your primary spiritual goal?</label>
-                <select id="reg-goal" class="auth-input text-select">
-                    <option value="Mental Clarity">Clear Mental Fog & Anxiety</option>
-                    <option value="Physical Vitality">Boost Physical Energy & Health</option>
-                    <option value="Deep Meditation">Deepend Meditative States</option>
-                    <option value="Space Cleansing">Clear Negative Energies from My Home</option>
-                </select>
-                <button type="submit" class="auth-submit-btn">Register & Unlock VIP Access</button>
-            </form>
-            <p class="auth-switch">Already registered? <span onclick="switchAuthMode('login')">Login Here</span></p>
-        </div>
-    </section>
+                <form id="review-form" style="margin-top: 20px;">
+                    <input type="text" id="rev-user" placeholder="Your Name" required class="auth-input">
+                    <select id="rev-rating" class="auth-input text-select">
+                        <option value="5">⭐⭐⭐⭐⭐ 5 Stars</option>
+                        <option value="4">⭐⭐⭐⭐ 4 Stars</option>
+                    </select>
+                    <textarea id="rev-text" placeholder="Detail your spiritual breakthrough..." required class="auth-input" style="height: 70px; padding: 10px; resize: none;"></textarea>
+                    <button type="submit" class="auth-submit-btn">Publish Review</button>
+                </form>
+            </section>
 
-    <!-- Divider Line -->
-    <hr class="section-divider">
+            <!-- Member Authentication Access Block -->
+            <section class="auth-container-wrapper" id="auth-section">
+                <div class="auth-box" id="login-box">
+                    <h3>Account Login</h3>
+                    <form id="login-form">
+                        <input type="email" placeholder="Email Address" required class="auth-input">
+                        <input type="password" placeholder="Password" required class="auth-input">
+                        <button type="submit" class="auth-submit-btn">Login</button>
+                    </form>
+                    <p class="auth-switch">New seeker? <span onclick="switchAuthMode('register')">Register here</span></p>
+                </div>
 
-    <!-- Community Blog Area -->
-    <section class="blog-container" id="blog-section">
-        <h2>Spiritual Wisdom & Community Experiences</h2>
-        <p class="blog-subtitle">A sacred space to learn, grow, and share our collective journeys.</p>
-        <div class="blog-grid">
-            <article class="blog-card">
-                <div class="blog-meta">July 24, 2026 • Rituals</div>
-                <h3>The Spiritual Benefits of Daily Sea Moss Consumption</h3>
-                <p>Sea moss is more than a physical supplement. Discover how updating your physical vessel unlocks deeper meditative states and clears mental fog...</p>
-                <a href="#" class="read-more-link">Read Article →</a>
-            </article>
-            <article class="blog-card">
-                <div class="blog-meta">July 22, 2026 • Healing</div>
-                <h3>Clearing Negative Energies with Palo Santo</h3>
-                <p>Understanding the ancient lineage of holy wood. Learn the precise intentions to hold while smudging your room to attract high-vibrational guidance...</p>
-                <a href="#" class="read-more-link">Read Article →</a>
-            </article>
-        </div>
-    </section>
+                <div class="auth-box hidden" id="register-box">
+                    <h3>Join the Inner Circle</h3>
+                    <form id="register-form">
+                        <input type="text" id="reg-name" placeholder="Full Name" required class="auth-input">
+                        <input type="email" id="reg-email" placeholder="Email Address" required class="auth-input">
+                        <input type="tel" id="reg-phone" placeholder="WhatsApp Number" required class="auth-input">
+                        <input type="password" id="reg-password" placeholder="Password" required class="auth-input">
+                        <select id="reg-goal" class="auth-input text-select">
+                            <option value="Clarity">Clear Mental Fog</option>
+                            <option value="Vitality">Boost Energy</option>
+                        </select>
+                        <button type="submit" class="auth-submit-btn">Register</button>
+                    </form>
+                    <p class="auth-switch">Have an account? <span onclick="switchAuthMode('login')">Login here</span></p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Right Column: Sidebar Navigation (Matches Reference Site Categories List) -->
+        <aside class="right-sidebar-column">
+            <h3 class="sidebar-category-header">Product Categories</h3>
+            <ul class="sidebar-category-list">
+                <li><button class="sidebar-cat-link active" onclick="filterCategory('All')">All Items</button></li>
+                <li><button class="sidebar-cat-link" onclick="filterCategory('Personal Care')">Personal Care</button></li>
+                <li><button class="sidebar-cat-link" onclick="filterCategory('Balm')">Balm</button></li>
+                <li><button class="sidebar-cat-link" onclick="filterCategory('Books')">Books</button></li>
+                <li><button class="sidebar-cat-link" onclick="filterCategory('Candles')">Candles</button></li>
+                <li><button class="sidebar-cat-link" onclick="filterCategory('Herbs')">Herbs</button></li>
+                <li><button class="sidebar-cat-link" onclick="filterCategory('Incense')">Incense</button></li>
+                <li><button class="sidebar-cat-link" onclick="filterCategory('Supplements')">Supplements</button></li>
+                <li><button class="sidebar-cat-link" onclick="filterCategory('Bundles')">Bundles</button></li>
+            </ul>
+        </aside>
+
+    </div>
+
+    <!-- Sticky Bottom Alert Strip (Matches Blue Banner in Reference Image) -->
+    <footer class="bottom-alert-banner">
+        <span>⚠️ ALL SALES ARE FINAL. NO REFUNDS.</span>
+        <button class="dismiss-banner-btn" onclick="this.parentElement.style.display='none'">✖ Dismiss</button>
+    </footer>
 
     <script src="app.js"></script>
 </body>
