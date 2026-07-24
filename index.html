@@ -12,7 +12,6 @@
     <header class="site-header">
         <div class="logo-title">The Orion's Healer</div>
         <div class="header-right">
-            <!-- Active Search input box trigger -->
             <div class="search-bar-container">
                 <input type="text" id="store-search-input" placeholder="Search products..." class="header-search-input" oninput="executeStoreLiveSearch()">
             </div>
@@ -37,7 +36,11 @@
         <div class="cart-drawer-content">
             <div class="cart-drawer-header">
                 <h3>Your Sacred Basket</h3>
-                <button class="close-cart-btn" onclick="toggleCartDrawer(false)">✖ Close</button>
+                <div style="display: flex; gap: 15px; align-items: center;">
+                    <!-- New Clear Basket Action Trigger -->
+                    <button class="clear-basket-btn" onclick="clearEntireBasket()" style="background: none; border: none; font-size: 0.85rem; color: #999; cursor: pointer; text-decoration: underline;">Clear All</button>
+                    <button class="close-cart-btn" onclick="toggleCartDrawer(false)">✖ Close</button>
+                </div>
             </div>
             
             <div id="cart-items-list" class="cart-items-body">

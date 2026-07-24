@@ -23,13 +23,10 @@ let activeDiscountMultiplier = 1.0;
 let currentCategoryFilter = "All";
 let searchQueryString = ""; 
 
-// Critical Upgrade: Reads directly from cloud repository local structures so updates persist globally
 let currentInventory = JSON.parse(localStorage.getItem('orion_live_db')) || initialProducts.concat(remainingProducts);
 let currentReviews = JSON.parse(localStorage.getItem('orion_reviews')) || [{ name: "Malik K.", rating: 5, text: "The live real-time filtering updates instantaneously!" }];
 
-function syncMasterDatabaseToMemory() {
-    localStorage.setItem('orion_live_db', JSON.stringify(currentInventory));
-}
+function syncMasterDatabaseToMemory() { localStorage.setItem('orion_live_db', JSON.stringify(currentInventory)); }
 
 function displayHomepageProducts() {
     const productGrid = document.getElementById('products');
@@ -69,97 +66,57 @@ function displayHomepageProducts() {
 
 function executeStoreLiveSearch() {
     const inputElement = document.getElementById('store-search-input');
-    if (inputElement) {
-        searchQueryString = inputElement.value.trim();
-        displayHomepageProducts();
-    }
+    if (inputElement) { searchQueryString = inputElement.value.trim(); displayHomepageProducts(); }
 }
 function verifyAdminGatewayPasskey() {
     const passkeyField = document.getElementById('admin-secret-pass-key');
     const errorDisplay = document.getElementById('admin-auth-error-msg');
     const lockModal = document.getElementById('admin-auth-lockout-modal');
     const dashboardView = document.getElementById('master-admin-dashboard-view');
-
     const secureMasterKey = "orion777"; 
 
     if (passkeyField.value === secureMasterKey) {
-        lockModal.classList.add('hidden');
-        dashboardView.classList.remove('hidden');
-        displayAdminInventoryTable();
-        activateFormSubmissionListener(); // Initialize adding listeners
+        lockModal.classList.add('hidden'); dashboardView.classList.remove('hidden');
+        displayAdminInventoryTable(); activateFormSubmissionListener();
     } else {
-        errorDisplay.innerText = "❌ Access Denied. Your sanctuary secret key code is invalid.";
-        passkeyField.value = "";
+        errorDisplay.innerText = "❌ Access Denied. Your sanctuary secret key code is invalid."; passkeyField.value = "";
     }
 }
 
 function displayAdminInventoryTable() {
     const tableBody = document.getElementById('admin-table-body');
     if (!tableBody) return; tableBody.innerHTML = "";
-
     currentInventory.forEach((product) => {
-        const row = `
-            <tr style="border-bottom: 1px solid #eee;">
-                <td style="padding: 12px;"><strong>${product.name}</strong><br><small style='color:#999;'>${product.category}</small></td>
-                <td style="padding: 12px; font-weight:bold; color:#2b70c9;">$${Number(product.myPrice).toFixed(2)}</td>
-                <td style="padding: 12px; text-align: center;">
-                    <button onclick="deleteProductBtnTrigger(${product.id})" style="background:#cc3333; color:white; padding:5px 10px; border:none; cursor:pointer; border-radius:2px;">Delete</button>
-                </td>
-            </tr>
-        `;
-        tableBody.innerHTML += row;
+        tableBody.innerHTML += `<tr style='border-bottom: 1px solid #eee;'><td style='padding: 12px;'><strong>${product.name}</strong><br><small style='color:#999;'>${product.category}</small></td><td style='padding: 12px; font-weight:bold; color:#2b70c9;'>$${Number(product.myPrice).toFixed(2)}</td><td style='padding: 12px; text-align: center;'><button onclick='deleteProductBtnTrigger(${product.id})' style='background:#cc3333; color:white; padding:5px 10px; border:none; cursor:pointer; border-radius:2px;'>Delete</button></td></tr>`;
     });
 }
 
 function activateFormSubmissionListener() {
     const addForm = document.getElementById('admin-add-product-form');
     if (!addForm) return;
-
     addForm.addEventListener('submit', function(e) {
         e.preventDefault();
-
         const name = document.getElementById('new-prod-name').value.trim();
         const category = document.getElementById('new-prod-category').value;
         const supplierCost = parseFloat(document.getElementById('new-prod-price').value) || 0;
         const description = document.getElementById('new-prod-desc').value.trim();
-
-        // Automatically apply your 3x pricing tier markup multiplier rule parameters
         const finalRetailPrice = supplierCost * 3;
 
-        // Automatically build custom vector container codes based on the chosen category string
         let visualStyle = "background: linear-gradient(135deg, #607d8b, #455a64); border-top: 8px solid #111;";
         let visualLabel = "📦 VESSEL";
-
         if (category === "Teas") { visualStyle = "background: linear-gradient(135deg, #1e3c72, #2a5298); border-top: 8px solid #00d2ff;"; visualLabel = "🦋 TEA BAG"; }
         else if (category === "Tonics") { visualStyle = "background: linear-gradient(135deg, #e91e63, #c2185b); border-top: 8px solid #ff5722;"; visualLabel = "🧪 TONIC"; }
         else if (category === "Books") { visualStyle = "background: linear-gradient(135deg, #673ab7, #512da8); border-top: 8px solid #fff;"; visualLabel = "📜 BOOK"; }
         else if (category === "Supplements") { visualStyle = "background: linear-gradient(135deg, #f12711, #f5af19); border-top: 8px solid #ffc107;"; visualLabel = "🌿 MOSS"; }
 
-        const freshItem = {
-            id: Date.now(),
-            name: name,
-            myPrice: finalRetailPrice,
-            visualStyle: visualStyle,
-            visualLabel: visualLabel,
-            category: category,
-            description: description
-        };
-
-        currentInventory.unshift(freshItem); // Place new product at the top of the grid
-        syncMasterDatabaseToMemory(); // Force sync calculations to core memory storage parameters
-        displayAdminInventoryTable(); // Refresh management tables
-        addForm.reset(); // Wipe inputs clean
-
-        alert("✨ Sanctuary Sync Success! " + name + " is now live with a 3x retail markup price of $" + finalRetailPrice.toFixed(2));
+        currentInventory.unshift({ id: Date.now(), name, myPrice: finalRetailPrice, visualStyle, visualLabel, category, description });
+        syncMasterDatabaseToMemory(); displayAdminInventoryTable(); addForm.reset();
+        alert("✨ Sanctuary Sync Success! Live markup value locked.");
     });
 }
 
 function deleteProductBtnTrigger(id) {
-    if (confirm("Permanently wipe this product from live storefront parameters?")) {
-        currentInventory = currentInventory.filter(p => p.id !== id);
-        syncMasterDatabaseToMemory();
-        displayAdminInventoryTable();
-    }
+    if (confirm("Permanently wipe this product from live storefront parameters?")) { currentInventory = currentInventory.filter(p => p.id !== id); syncMasterDatabaseToMemory(); displayAdminInventoryTable(); }
 }
 
 /* ==========================================
@@ -171,24 +128,29 @@ function toggleCartDrawer(isOpen) {
 }
 
 function addItemToBasket(productId) {
-    const product = currentInventory.find(p => p.id === productId);
-    if (!product) return;
+    const product = currentInventory.find(p => p.id === productId); if (!product) return;
     const existingItem = activeCart.find(item => item.id === productId);
     if (existingItem) { existingItem.quantity += 1; } 
     else { activeCart.push({ id: product.id, name: product.name, price: product.myPrice * activeDiscountMultiplier, quantity: 1 }); }
-    updateCartInterfaceTotals();
-    alert(product.name + " packed into basket!");
+    updateCartInterfaceTotals(); alert(product.name + " packed into basket!");
+}
+
+// New Core Action Function: Wipes the cart cleanly and resets numerical counts
+function clearEntireBasket() {
+    if (activeCart.length === 0) return;
+    if (confirm("Are you sure you want to remove all items from your sacred basket?")) {
+        activeCart = []; // Drop arrays
+        updateCartInterfaceTotals(); // Synchronize tracking
+    }
 }
 
 function removeItemFromBasket(productId) {
-    activeCart = activeCart.filter(item => item.id !== productId);
-    updateCartInterfaceTotals();
+    activeCart = activeCart.filter(item => item.id !== productId); updateCartInterfaceTotals();
 }
 
 function updateCartInterfaceTotals() {
     let tItems = 0; let tPrice = 0;
-    const list = document.getElementById('cart-items-list');
-    if (!list) return; list.innerHTML = "";
+    const list = document.getElementById('cart-items-list'); if (!list) return; list.innerHTML = "";
     if (activeCart.length === 0) { list.innerHTML = "<p style='text-align: center; color: #999; margin-top: 40px;'>Your basket is currently empty.</p>"; } 
     else {
         activeCart.forEach(item => {
@@ -215,17 +177,13 @@ function checkoutEntireCartViaEmail() {
 }
 
 function filterCategory(categoryName) {
-    currentCategoryFilter = categoryName;
-    const links = document.querySelectorAll('.sidebar-cat-link');
-    links.forEach(link => {
-        link.innerText.toLowerCase().includes(categoryName.toLowerCase()) || (categoryName === "All" && link.innerText.includes("All")) ? link.classList.add('active') : link.classList.remove('active');
-    });
+    currentCategoryFilter = categoryName; const links = document.querySelectorAll('.sidebar-cat-link');
+    links.forEach(link => { link.innerText.toLowerCase().includes(categoryName.toLowerCase()) || (categoryName === "All" && link.innerText.includes("All")) ? link.classList.add('active') : link.classList.remove('active'); });
     displayHomepageProducts();
 }
 
 function applyDiscountCoupon() {
-    const input = document.getElementById('coupon-input').value.trim().toUpperCase();
-    const msg = document.getElementById('coupon-message');
+    const input = document.getElementById('coupon-input').value.trim().toUpperCase(); const msg = document.getElementById('coupon-message');
     if (input === "SEEKER10") { activeDiscountMultiplier = 0.90; msg.style.color = "green"; msg.innerText = "10% Coupon code applied successfully."; } 
     else { activeDiscountMultiplier = 1.0; msg.style.color = "red"; msg.innerText = "Invalid verification code."; }
     activeCart.forEach(item => { const m = currentInventory.find(p => p.id === item.id); if (m) item.price = m.myPrice * activeDiscountMultiplier; });
@@ -233,11 +191,8 @@ function applyDiscountCoupon() {
 }
 
 function displayCommunityReviews() {
-    const container = document.getElementById('reviews-container');
-    if (!container) return; container.innerHTML = "";
-    currentReviews.forEach(rev => {
-        container.innerHTML += "<div style='border-bottom:1px solid #eee; padding:10px 0;'><small><strong>" + rev.name + "</strong> (" + "★".repeat(rev.rating) + ")</small><p style='font-size:0.9rem; color:#555;'>\"" + rev.text + "\"</p></div>";
-    });
+    const container = document.getElementById('reviews-container'); if (!container) return; container.innerHTML = "";
+    currentReviews.forEach(rev => { container.innerHTML += "<div style='border-bottom:1px solid #eee; padding:10px 0;'><small><strong>" + rev.name + "</strong> (" + "★".repeat(rev.rating) + ")</small><p style='font-size:0.9rem; color:#555;'>\"" + rev.text + "\"</p></div>"; });
 }
 
 const revForm = document.getElementById('review-form');
@@ -245,11 +200,8 @@ if (revForm) {
     revForm.addEventListener('submit', function(e) {
         e.preventDefault();
         const newReview = { name: document.getElementById('rev-user').value, rating: parseInt(document.getElementById('rev-rating').value), text: document.getElementById('rev-text').value };
-        currentReviews.unshift(newReview); localStorage.setItem('orion_reviews', JSON.stringify(currentReviews));
-        displayCommunityReviews(); revForm.reset(); alert("Feedback saved!");
+        currentReviews.unshift(newReview); localStorage.setItem('orion_reviews', JSON.stringify(currentReviews)); displayCommunityReviews(); revForm.reset(); alert("Feedback saved!");
     });
 }
 
-window.onload = function() {
-    displayHomepageProducts(); displayCommunityReviews(); updateCartInterfaceTotals();
-};
+window.onload = function() { displayHomepageProducts(); displayCommunityReviews(); updateCartInterfaceTotals(); };
