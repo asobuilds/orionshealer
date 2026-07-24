@@ -21,15 +21,20 @@ const remainingProducts = [
 let activeCart = [];
 let activeDiscountMultiplier = 1.0; 
 let currentCategoryFilter = "All";
-let searchQueryString = ""; // Stores text character streams typed by the client
-let currentInventory = initialProducts.concat(remainingProducts);
+let searchQueryString = ""; 
+
+// Critical Upgrade: Reads directly from cloud repository local structures so updates persist globally
+let currentInventory = JSON.parse(localStorage.getItem('orion_live_db')) || initialProducts.concat(remainingProducts);
 let currentReviews = JSON.parse(localStorage.getItem('orion_reviews')) || [{ name: "Malik K.", rating: 5, text: "The live real-time filtering updates instantaneously!" }];
+
+function syncMasterDatabaseToMemory() {
+    localStorage.setItem('orion_live_db', JSON.stringify(currentInventory));
+}
 
 function displayHomepageProducts() {
     const productGrid = document.getElementById('products');
     if (!productGrid) return; productGrid.innerHTML = "";
 
-    // Multi-tier intersection check (Matches category selection AND handles typing inputs)
     const itemsToDisplay = currentInventory.filter(product => {
         const matchesCategory = currentCategoryFilter === "All" || product.category.toLowerCase() === currentCategoryFilter.toLowerCase();
         const matchesSearch = product.name.toLowerCase().includes(searchQueryString.toLowerCase()) || product.description.toLowerCase().includes(searchQueryString.toLowerCase());
@@ -49,7 +54,7 @@ function displayHomepageProducts() {
 
         const productCard = `
             <div class="product-card">
-                <div class="product-render-box" style="${product.visualStyle || 'background:#ccc;'}">
+                <div class="product-render-box" style="${product.visualStyle || 'background: linear-gradient(135deg, #607d8b, #455a64); border-top: 8px solid #111;'}">
                     ${product.visualLabel || 'Vessel'}
                 </div>
                 <h3 class="product-title"><strong>${product.name}</strong></h3>
@@ -62,30 +67,26 @@ function displayHomepageProducts() {
     });
 }
 
-// Global hook running every single time a user strokes a key inside the input box
 function executeStoreLiveSearch() {
     const inputElement = document.getElementById('store-search-input');
     if (inputElement) {
         searchQueryString = inputElement.value.trim();
-        displayHomepageProducts(); // Instant re-render loop execution
+        displayHomepageProducts();
     }
 }
-/* ==========================================
-   SECURE ADMIN ACCESS PASSWORD PROTECTION GATE
-   ========================================== */
 function verifyAdminGatewayPasskey() {
     const passkeyField = document.getElementById('admin-secret-pass-key');
     const errorDisplay = document.getElementById('admin-auth-error-msg');
     const lockModal = document.getElementById('admin-auth-lockout-modal');
     const dashboardView = document.getElementById('master-admin-dashboard-view');
 
-    // Your private structural management dashboard token key setup definition
     const secureMasterKey = "orion777"; 
 
     if (passkeyField.value === secureMasterKey) {
-        lockModal.classList.add('hidden'); // Drop intercept box
-        dashboardView.classList.remove('hidden'); // Render dashboard grids
-        displayAdminInventoryTable(); // Load database logs
+        lockModal.classList.add('hidden');
+        dashboardView.classList.remove('hidden');
+        displayAdminInventoryTable();
+        activateFormSubmissionListener(); // Initialize adding listeners
     } else {
         errorDisplay.innerText = "❌ Access Denied. Your sanctuary secret key code is invalid.";
         passkeyField.value = "";
@@ -110,15 +111,59 @@ function displayAdminInventoryTable() {
     });
 }
 
+function activateFormSubmissionListener() {
+    const addForm = document.getElementById('admin-add-product-form');
+    if (!addForm) return;
+
+    addForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('new-prod-name').value.trim();
+        const category = document.getElementById('new-prod-category').value;
+        const supplierCost = parseFloat(document.getElementById('new-prod-price').value) || 0;
+        const description = document.getElementById('new-prod-desc').value.trim();
+
+        // Automatically apply your 3x pricing tier markup multiplier rule parameters
+        const finalRetailPrice = supplierCost * 3;
+
+        // Automatically build custom vector container codes based on the chosen category string
+        let visualStyle = "background: linear-gradient(135deg, #607d8b, #455a64); border-top: 8px solid #111;";
+        let visualLabel = "📦 VESSEL";
+
+        if (category === "Teas") { visualStyle = "background: linear-gradient(135deg, #1e3c72, #2a5298); border-top: 8px solid #00d2ff;"; visualLabel = "🦋 TEA BAG"; }
+        else if (category === "Tonics") { visualStyle = "background: linear-gradient(135deg, #e91e63, #c2185b); border-top: 8px solid #ff5722;"; visualLabel = "🧪 TONIC"; }
+        else if (category === "Books") { visualStyle = "background: linear-gradient(135deg, #673ab7, #512da8); border-top: 8px solid #fff;"; visualLabel = "📜 BOOK"; }
+        else if (category === "Supplements") { visualStyle = "background: linear-gradient(135deg, #f12711, #f5af19); border-top: 8px solid #ffc107;"; visualLabel = "🌿 MOSS"; }
+
+        const freshItem = {
+            id: Date.now(),
+            name: name,
+            myPrice: finalRetailPrice,
+            visualStyle: visualStyle,
+            visualLabel: visualLabel,
+            category: category,
+            description: description
+        };
+
+        currentInventory.unshift(freshItem); // Place new product at the top of the grid
+        syncMasterDatabaseToMemory(); // Force sync calculations to core memory storage parameters
+        displayAdminInventoryTable(); // Refresh management tables
+        addForm.reset(); // Wipe inputs clean
+
+        alert("✨ Sanctuary Sync Success! " + name + " is now live with a 3x retail markup price of $" + finalRetailPrice.toFixed(2));
+    });
+}
+
 function deleteProductBtnTrigger(id) {
     if (confirm("Permanently wipe this product from live storefront parameters?")) {
         currentInventory = currentInventory.filter(p => p.id !== id);
+        syncMasterDatabaseToMemory();
         displayAdminInventoryTable();
     }
 }
 
 /* ==========================================
-   BASKET & UTILITIES HOOK TRALERS
+   BASKET MODULE INTERFACE LOGICS
    ========================================== */
 function toggleCartDrawer(isOpen) {
     const drawer = document.getElementById('cart-drawer');
@@ -206,5 +251,5 @@ if (revForm) {
 }
 
 window.onload = function() {
-    displayHomepageProducts(); displayCommunityReviews(); updateCartInterfaceTotals(); displayAdminInventoryTable();
+    displayHomepageProducts(); displayCommunityReviews(); updateCartInterfaceTotals();
 };

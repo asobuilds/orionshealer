@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    <!-- Protected Real Dashboard View Container (Hidden behind modal layer) -->
+    <!-- Protected Real Dashboard View Container -->
     <div id="master-admin-dashboard-view" class="hidden">
         <header class="site-header">
             <div class="logo" style="font-weight: bold; font-size: 1.4rem;">ORION'S ADMIN PANEL</div>
@@ -30,6 +30,28 @@
 
         <main class="store-container" style="max-width: 1000px; margin: 40px auto; padding: 0 20px;">
             <h1 style="text-align: center; margin-bottom: 30px; font-size: 2rem;">Inventory Management Panel</h1>
+
+            <!-- Add Product Form Block -->
+            <section class="auth-container-wrapper" style="max-width: 500px; margin: 0 auto 40px auto;">
+                <div class="auth-box" style="background: white;">
+                    <h3>Add New Spiritual Vessel</h3>
+                    <form id="admin-add-product-form" style="margin-top: 15px;">
+                        <input type="text" id="new-prod-name" placeholder="Product Name" required class="auth-input">
+                        <select id="new-prod-category" class="auth-input text-select" required>
+                            <option value="Books">Books</option>
+                            <option value="Herbs">Herbs</option>
+                            <option value="Supplements">Supplements</option>
+                            <option value="Teas">Teas</option>
+                            <option value="Tonics">Tonics</option>
+                            <option value="Personal Care">Personal Care</option>
+                            <option value="Miscellaneous">Miscellaneous</option>
+                        </select>
+                        <input type="number" id="new-prod-price" placeholder="Supplier Price ($)" required class="auth-input">
+                        <input type="text" id="new-prod-desc" placeholder="Brief Description (Max 100 words)" required class="auth-input">
+                        <button type="submit" class="auth-submit-btn" style="background-color: #2b70c9;">Save & Sync Product</button>
+                    </form>
+                </div>
+            </section>
 
             <!-- Inventory Table List -->
             <section class="auth-box" style="text-align: left; background: white; padding: 25px; border: 1px solid #eee;">
