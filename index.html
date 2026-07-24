@@ -13,6 +13,8 @@
         <div class="logo">ORION'S HEALER</div>
         <nav class="main-nav">
             <a href="#shop-section">Shop</a>
+            <a href="#coupon-section">Promo Offers</a>
+            <a href="#reviews-section">Community Reviews</a>
             <a href="#blog-section">Spiritual Blog</a>
             <a href="#auth-section" id="nav-auth-btn">Login / Register</a>
         </nav>
@@ -26,12 +28,54 @@
         </section>
     </main>
 
+    <!-- Promo Coupon Engine Section -->
+    <section class="store-container" id="coupon-section" style="max-width: 500px; margin-top: 20px;">
+        <div class="auth-box" style="border: 2px dashed #8c7355; padding: 25px;">
+            <h3 style="font-size: 1.2rem; color: #333; margin-bottom: 5px; font-weight: 500;">Have a Spiritual Promo Code?</h3>
+            <p style="font-size: 0.8rem; color: #8c7355; margin-bottom: 15px;">Enter your coupon to apply active price discounts instantly</p>
+            <div style="display: flex; gap: 10px;">
+                <input type="text" id="coupon-input" placeholder="e.g., SEEKER10" class="auth-input" style="margin-bottom: 0; text-transform: uppercase;">
+                <button onclick="applyDiscountCoupon()" class="add-to-cart-btn" style="width: auto; padding: 0 25px;">Apply</button>
+            </div>
+            <p id="coupon-message" style="font-size: 0.85rem; margin-top: 10px; font-weight: 600;"></p>
+        </div>
+    </section>
+
+    <!-- Divider Line -->
+    <hr class="section-divider">
+
+    <!-- Community Reviews Section -->
+    <section class="store-container" id="reviews-section">
+        <h2 style="text-align: center; font-size: 1.8rem; font-weight: 400; margin-bottom: 10px;">Customer Experiences & Feedback</h2>
+        <p style="text-align: center; color: #8c7355; margin-bottom: 40px; font-style: italic;">Real feedback from seekers within our sacred circle.</p>
+        
+        <!-- Live Reviews List -->
+        <div class="blog-grid" id="reviews-container" style="margin-bottom: 40px;">
+            <!-- Pre-loaded reviews will inject here via JavaScript -->
+        </div>
+
+        <!-- Write a Review Form -->
+        <div class="auth-box" style="max-width: 600px; margin: 0 auto;">
+            <h3>Share Your Experience</h3>
+            <p class="auth-subtitle">Help other seekers discover their healing track</p>
+            <form id="review-form">
+                <input type="text" id="rev-user" placeholder="Your Name" required class="auth-input">
+                <select id="rev-rating" class="auth-input text-select">
+                    <option value="5">⭐⭐⭐⭐⭐ Excellent (5 Stars)</option>
+                    <option value="4">⭐⭐⭐⭐ Very Good (4 Stars)</option>
+                    <option value="3">⭐⭐⭐ Good (3 Stars)</option>
+                </select>
+                <textarea id="rev-text" placeholder="Detail your spiritual breakthrough or product feedback..." required class="auth-input" style="height: 90px; padding: 12px; resize: none;"></textarea>
+                <button type="submit" class="auth-submit-btn">Submit Feedback</button>
+            </form>
+        </div>
+    </section>
+
     <!-- Divider Line -->
     <hr class="section-divider">
 
     <!-- Membership Authentication Section -->
     <section class="auth-container" id="auth-section">
-        <!-- Login Form Block -->
         <div class="auth-box" id="login-box">
             <h2>Welcome Back, Seeker</h2>
             <p class="auth-subtitle">Enter your sanctuary details to continue your journey</p>
@@ -44,7 +88,6 @@
             <p class="auth-switch forgot-pass" onclick="recoverPassword()">Forgot Password?</p>
         </div>
 
-        <!-- Registration Form Block (Hidden by default until clicked) -->
         <div class="auth-box hidden" id="register-box">
             <h2>Join Our Sacred Circle</h2>
             <p class="auth-subtitle">Create an account to personalize your spiritual growth</p>
@@ -61,7 +104,6 @@
                     <option value="Deep Meditation">Deepend Meditative States</option>
                     <option value="Space Cleansing">Clear Negative Energies from My Home</option>
                 </select>
-
                 <button type="submit" class="auth-submit-btn">Register & Unlock VIP Access</button>
             </form>
             <p class="auth-switch">Already registered? <span onclick="switchAuthMode('login')">Login Here</span></p>
