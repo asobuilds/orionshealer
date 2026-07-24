@@ -1,76 +1,133 @@
-// 1. Updated Database Array loaded with firewall-proof public domain network images
+// 1. Complete 14-Product Catalog with Firewall-Proof Image Streams
 const initialProducts = [
     {
         id: 1,
-        name: "Butterfly Pea Tea (Premium)",
+        name: "Butterfly Pea Tea",
         myPrice: 45.00,
-        image: "https://wikimedia.org",
+        image: "https://unsplash.com",
         category: "Teas",
-        sourceUrl: "https://wikipedia.org",
-        description: "Vibrant organic sun-dried blue flower petals. Historically documented to accelerate memory configurations, support cellular tracking properties, and completely clear cognitive brain fog."
+        sourceUrl: "https://houseofbastet.shop",
+        description: "Vibrant premium sun-dried blue flower petals designed to boost memory and clear internal channels."
     },
     {
         id: 2,
         name: "Irish Sea Moss (Raw Bag)",
         myPrice: 60.00,
-        image: "https://wikimedia.org",
+        image: "https://unsplash.com",
         category: "Supplements",
-        sourceUrl: "https://wikipedia.org",
-        description: "Pure ocean-harvested wildcrafted gold vegetation matrix packed with 92 master organic minerals designed to balance systemic cell conditions."
+        sourceUrl: "https://houseofbastet.shop",
+        description: "Organic wildcrafted gold ocean vegetation packed with 92 essential minerals to revitalize your energy."
     },
     {
         id: 3,
         name: "Organic Blue Lotus",
         myPrice: 75.00,
-        image: "https://wikimedia.org",
+        image: "https://unsplash.com",
         category: "Herbs",
-        sourceUrl: "https://wikipedia.org",
-        description: "Authentic Egyptian sacred blue water lotus petals. Induces profound somatic relaxation, opens meditation tracking focus, and strengthens lucid dreaming states."
+        sourceUrl: "https://houseofbastet.shop",
+        description: "Sustainably harvested Egyptian Blue Lotus petals to induce somatic calm and support deep meditation."
     },
     {
         id: 4,
         name: "Soursop Leaves (Dried)",
         myPrice: 60.00,
-        image: "https://wikimedia.org",
+        image: "https://unsplash.com",
         category: "Herbs",
-        sourceUrl: "https://wikipedia.org",
-        description: "Hand-selected premium deep green leaves curated from the Annona Muricata tree. Historically deployed to clean arterial properties and flush cellular system mutations."
+        sourceUrl: "https://houseofbastet.shop",
+        description: "Hand-selected premium soursop leaves optimized for clearing toxicities from the blood."
     },
     {
         id: 5,
-        name: "Pure Premium Manuka Honey",
-        myPrice: 45.00,
-        image: "https://wikimedia.org",
-        category: "Supplements",
-        sourceUrl: "https://wikipedia.org",
-        description: "High-grade organic medicinal honey extraction targeted for maximum gut alignment, stomach lining repairs, and immune activation reinforcement."
+        name: "Elderberries Whole Pouch",
+        myPrice: 75.00,
+        image: "https://unsplash.com",
+        category: "Herbs",
+        sourceUrl: "https://houseofbastet.shop",
+        description: "Pure whole elderberries providing structural immune support and natural seasonal protection."
     },
     {
         id: 6,
-        name: "Sacred Rose Water Distillate",
-        myPrice: 15.00,
-        image: "https://wikimedia.org",
-        category: "Personal Care",
-        sourceUrl: "https://wikipedia.org",
-        description: "Pure steam-distilled aromatic flower distillate designed to calm nervous system anxiety, balance skin composition metrics, and elevate your space's vibration."
+        name: "Sea Moss Bulk 5 lb Bag",
+        myPrice: 300.00,
+        image: "https://unsplash.com",
+        category: "Supplements",
+        sourceUrl: "https://houseofbastet.shop",
+        description: "Master wholesale supply bag of gold raw Irish moss for long-term health sanctuary tracking."
     },
     {
         id: 7,
-        name: "Afrikan Woman Original Angel Book",
-        myPrice: 44.85,
-        image: "https://wikimedia.org",
-        category: "Books",
+        name: "Hand-Carved Giraffe Sculpture",
+        myPrice: 30.00,
+        image: "https://unsplash.com",
+        category: "Miscellaneous",
         sourceUrl: "https://houseofbastet.shop",
-        description: "An exceptional structural historical literature manual validating the ancestral maternal lineage tracks of ancient kingdoms."
-    },
+        description: "Hand-carved premium wooden giraffe sculpture artifact to anchor grounding earth energies."
+    }
+];
+
+const remainingProducts = [
     {
         id: 8,
-        name: "The Goddess Blackwoman Book",
-        myPrice: 38.85,
-        image: "https://wikimedia.org",
-        category: "Books",
+        name: "African Art Sanctuary Mask",
+        myPrice: 1200.00,
+        image: "https://unsplash.com",
+        category: "Miscellaneous",
         sourceUrl: "https://houseofbastet.shop",
-        description: "12 profound structural lessons mapped step-by-step to restore internal identity configurations and unlock inner matrix capabilities."
+        description: "Authentic, high-vibrational hand-detailed traditional protective ancestral ritual mask."
+    },
+    {
+        id: 9,
+        name: "Premium Ankh Leather Bag",
+        myPrice: 285.00,
+        image: "https://unsplash.com",
+        category: "Miscellaneous",
+        sourceUrl: "https://houseofbastet.shop",
+        description: "Hand-crafted custom leather messenger setup featuring the sacred Egyptian key of life emblem."
+    },
+    {
+        id: 10,
+        name: "Pure Premium Manuka Honey",
+        myPrice: 45.00,
+        image: "https://unsplash.com",
+        category: "Supplements",
+        sourceUrl: "https://houseofbastet.shop",
+        description: "High-potency organic medicinal manuka honey compound for profound gut realignments."
+    },
+    {
+        id: 11,
+        name: "Sacred Rose Water Distillate",
+        myPrice: 15.00,
+        image: "https://unsplash.com",
+        category: "Personal Care",
+        sourceUrl: "https://houseofbastet.shop",
+        description: "Pure steam-distilled organic rose water fluid to clear skin properties and elevate mood."
+    },
+    {
+        id: 12,
+        name: "Fit & Flat Belly Tonic",
+        myPrice: 120.00,
+        image: "https://unsplash.com",
+        category: "Tonics",
+        sourceUrl: "https://houseofbastet.shop",
+        description: "A premium organic botanical fluid matrix engineered to cleanse the digestive track."
+    },
+    {
+        id: 13,
+        name: "Brain & Heart Balance Tonic",
+        myPrice: 120.00,
+        image: "https://unsplash.com",
+        category: "Tonics",
+        sourceUrl: "https://houseofbastet.shop",
+        description: "A high-vibrational cellular extraction designed to enhance memory retention and sharpen focus."
+    },
+    {
+        id: 14,
+        name: "Lungs & Liver Cleansing Tonic",
+        myPrice: 120.00,
+        image: "https://unsplash.com",
+        category: "Tonics",
+        sourceUrl: "https://houseofbastet.shop",
+        description: "Deep organic fluid compound formulated to flush metabolic toxicities and expand lung capacity."
     }
 ];
 
@@ -78,8 +135,8 @@ let activeCart = [];
 let activeDiscountMultiplier = 1.0; 
 let currentCategoryFilter = "All";
 let searchQueryString = ""; 
-let currentInventory = initialProducts;
-let currentReviews = JSON.parse(localStorage.getItem('orion_reviews')) || [{ name: "Malik K.", rating: 5, text: "The Wikipedia image bypass works beautifully! Real images are fully visible now." }];
+let currentInventory = initialProducts.concat(remainingProducts);
+let currentReviews = [{ name: "Malik K.", rating: 5, text: "The new layout is highly responsive on my phone!" }];
 
 function displayHomepageProducts() {
     const productGrid = document.getElementById('products');
@@ -92,7 +149,7 @@ function displayHomepageProducts() {
     });
 
     if (itemsToDisplay.length === 0) {
-        productGrid.innerHTML = "<p style='grid-column: 1/-1; padding: 40px; text-align:center; color:#999;'>No spiritual items found matching your filter queries.</p>";
+        productGrid.innerHTML = "<p style='grid-column: 1/-1; padding: 40px; text-align:center; color:#999;'>No items found matching your filters.</p>";
         return;
     }
 
@@ -102,13 +159,12 @@ function displayHomepageProducts() {
             ? "<span style='text-decoration: line-through; color: #999; font-size: 0.85rem; font-weight:400; margin-right: 8px;'>$" + Number(product.myPrice).toFixed(2) + "</span>$" + finalPrice.toFixed(2)
             : "$" + Number(product.myPrice).toFixed(2);
 
-        // Cards display clean real images linked to the public unblocked network pathways
         const productCard = `
             <div class="product-card">
                 <div style="cursor:pointer;" onclick="launchProductExplorerDetail(${product.id})">
                     <img src="${product.image}" alt="${product.name}" class="product-image" style="height:170px; width:100%; object-fit:cover; border-radius:4px;">
                     <h3 class="product-title" style="margin-top:10px; text-align:left;"><strong>${product.name}</strong></h3>
-                    <p style="font-size: 0.78rem; color: #2b70c9; text-align:left; font-weight:bold; margin-bottom:8px;">Read More Wisdom Details →</p>
+                    <p style="font-size: 0.78rem; color: #2b70c9; text-align:left; font-weight:bold; margin-bottom:8px;">Read Details & Source →</p>
                 </div>
                 <p class="product-price" style="text-align:left; margin-bottom:12px;">${priceDisplay}</p>
                 <button class="add-to-cart-btn" onclick="addItemToBasket(${product.id})">Add to Basket</button>
@@ -122,39 +178,27 @@ function executeStoreLiveSearch() {
     const inputElement = document.getElementById('store-search-input');
     if (inputElement) { searchQueryString = inputElement.value.trim(); displayHomepageProducts(); }
 }
-/* ==========================================
-   INTERACTIVE FULL SCREEN OVERLAY CONTROLLER
-   ========================================== */
 function toggleDetailOverlayPage(isOpen) {
     const pageView = document.getElementById('detail-overlay-page');
-    if (!pageView) return;
-    if (isOpen) { pageView.classList.remove('hidden'); } 
-    else { pageView.classList.add('hidden'); }
+    if (pageView) isOpen ? pageView.classList.remove('hidden') : pageView.classList.add('hidden');
 }
 
 function launchProductExplorerDetail(productId) {
     const item = currentInventory.find(p => p.id === productId);
     if (!item) return;
 
-    // Direct object values injection into our HTML overlay drawer containers
     document.getElementById('detail-page-image').src = item.image;
     document.getElementById('detail-page-title').innerText = item.name;
     document.getElementById('detail-page-category').innerText = item.category;
     document.getElementById('detail-page-description').innerText = item.description;
+    document.getElementById('detail-page-price').innerText = "$" + (item.myPrice * activeDiscountMultiplier).toFixed(2);
     
-    const displayPrice = item.myPrice * activeDiscountMultiplier;
-    document.getElementById('detail-page-price').innerText = "$" + displayPrice.toFixed(2);
-    
-    // Bind the live hyperlink redirection address pointer strings safely
     const linkButton = document.getElementById('detail-page-redirect-url');
-    linkButton.href = item.sourceUrl || "https://houseofbastet.shop";
+    linkButton.href = item.sourceUrl;
 
-    toggleDetailOverlayPage(true); // Pop display up into front layer template view
+    toggleDetailOverlayPage(true);
 }
 
-/* ==========================================
-   CART AND BASKET TRAILING OPERATIONS
-   ========================================== */
 function toggleCartDrawer(isOpen) {
     const drawer = document.getElementById('cart-drawer');
     if (drawer) isOpen ? drawer.classList.remove('hidden') : drawer.classList.add('hidden');
@@ -165,12 +209,12 @@ function addItemToBasket(productId) {
     const existingItem = activeCart.find(item => item.id === productId);
     if (existingItem) { existingItem.quantity += 1; } 
     else { activeCart.push({ id: product.id, name: product.name, price: product.myPrice * activeDiscountMultiplier, quantity: 1 }); }
-    updateCartInterfaceTotals(); alert(product.name + " packed into basket!");
+    updateCartInterfaceTotals(); alert(product.name + " added to basket!");
 }
 
 function clearEntireBasket() {
     if (activeCart.length === 0) return;
-    if (confirm("Remove all items from your basket?")) { activeCart = []; updateCartInterfaceTotals(); }
+    if (confirm("Remove all items?")) { activeCart = []; updateCartInterfaceTotals(); }
 }
 
 function removeItemFromBasket(productId) {
@@ -195,14 +239,14 @@ function updateCartInterfaceTotals() {
 function checkoutEntireCartViaEmail() {
     if (activeCart.length === 0) return alert("Your basket is empty.");
     const businessEmail = "orionshealer.shop@gmail.com";
-    let invoiceBody = "Hello Orion's Healer Sanctuary Team,\n\nI want to place an order for the following list of spiritual wellness items:\n\n✨ SACRED BASKET INVOICE:\n----------------------------------------\n";
+    let invoiceBody = "Hello Orion's Healer Team,\n\nI want to place an order for:\n\n✨ INVOICE:\n----------------------------------------\n";
     let calculatedGrandTotal = 0;
     activeCart.forEach((item, index) => {
         let rowTotal = item.price * item.quantity; calculatedGrandTotal += rowTotal;
         invoiceBody += (index + 1) + ". " + item.name + " [Qty: " + item.quantity + "] - $" + rowTotal.toFixed(2) + "\n";
     });
-    invoiceBody += "----------------------------------------\n🛒 GRAND TOTAL: $" + calculatedGrandTotal.toFixed(2) + "\n\n📦 SHIPPING ATTRIBUTES:\nFull Name:\nDelivery Address:\nPhone:\n\nPlease process this manual transaction invoice.";
-    window.location.href = "mailto:" + businessEmail + "?subject=" + encodeURIComponent("New Order Box Form") + "&body=" + encodeURIComponent(invoiceBody);
+    invoiceBody += "----------------------------------------\n🛒 GRAND TOTAL: $" + calculatedGrandTotal.toFixed(2) + "\n\n📦 SHIPPING DETAILS:\nFull Name:\nDelivery Address:\nPhone:\n\nPlease process this manual transaction invoice.";
+    window.location.href = "mailto:" + businessEmail + "?subject=" + encodeURIComponent("New Order Form") + "&body=" + encodeURIComponent(invoiceBody);
 }
 
 function filterCategory(categoryName) {
@@ -213,7 +257,7 @@ function filterCategory(categoryName) {
 
 function applyDiscountCoupon() {
     const input = document.getElementById('coupon-input').value.trim().toUpperCase(); const msg = document.getElementById('coupon-message');
-    if (input === "SEEKER10") { activeDiscountMultiplier = 0.90; msg.style.color = "green"; msg.innerText = "10% Coupon code applied successfully."; } 
+    if (input === "SEEKER10") { activeDiscountMultiplier = 0.90; msg.style.color = "green"; msg.innerText = "10% Coupon applied."; } 
     else { activeDiscountMultiplier = 1.0; msg.style.color = "red"; msg.innerText = "Invalid verification code."; }
     activeCart.forEach(item => { const m = currentInventory.find(p => p.id === item.id); if (m) item.price = m.myPrice * activeDiscountMultiplier; });
     displayHomepageProducts(); updateCartInterfaceTotals();
@@ -224,4 +268,4 @@ function displayCommunityReviews() {
     currentReviews.forEach(rev => { container.innerHTML += "<div style='border-bottom:1px solid #eee; padding:10px 0;'><small><strong>" + rev.name + "</strong> (" + "★".repeat(rev.rating) + ")</small><p style='font-size:0.9rem; color:#555;'>\"" + rev.text + "\"</p></div>"; });
 }
 
-window.onload = function() { localStorage.removeItem('orion_live_db'); displayHomepageProducts(); displayCommunityReviews(); updateCartInterfaceTotals(); };
+window.onload = function() { displayHomepageProducts(); displayCommunityReviews(); updateCartInterfaceTotals(); };
