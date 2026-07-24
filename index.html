@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <!-- Main Navigation Bar (Replicating Reference Site Header) -->
+    <!-- Main Navigation Bar -->
     <header class="site-header">
         <div class="logo-title">The Orion's Healer</div>
         <div class="header-right">
@@ -49,6 +49,7 @@
                     <p>Loading the storefront inventory layer...</p>
                 </div>
             </section>
+
             <!-- Interactive Promo Discount Block -->
             <section class="coupon-activation-box" id="coupon-section">
                 <h3>Spiritual Coupon Verification</h3>
@@ -105,25 +106,24 @@
             </section>
         </main>
 
-        <!-- Right Column: Sidebar Navigation (Matches Reference Site Categories List) -->
+        <!-- Right Column: Sidebar Navigation (Aligned 1:1 with app.js Categories) -->
         <aside class="right-sidebar-column">
             <h3 class="sidebar-category-header">Product Categories</h3>
             <ul class="sidebar-category-list">
                 <li><button class="sidebar-cat-link active" onclick="filterCategory('All')">All Items</button></li>
-                <li><button class="sidebar-cat-link" onclick="filterCategory('Personal Care')">Personal Care</button></li>
-                <li><button class="sidebar-cat-link" onclick="filterCategory('Balm')">Balm</button></li>
                 <li><button class="sidebar-cat-link" onclick="filterCategory('Books')">Books</button></li>
-                <li><button class="sidebar-cat-link" onclick="filterCategory('Candles')">Candles</button></li>
                 <li><button class="sidebar-cat-link" onclick="filterCategory('Herbs')">Herbs</button></li>
-                <li><button class="sidebar-cat-link" onclick="filterCategory('Incense')">Incense</button></li>
                 <li><button class="sidebar-cat-link" onclick="filterCategory('Supplements')">Supplements</button></li>
-                <li><button class="sidebar-cat-link" onclick="filterCategory('Bundles')">Bundles</button></li>
+                <li><button class="sidebar-cat-link" onclick="filterCategory('Teas')">Teas</button></li>
+                <li><button class="sidebar-cat-link" onclick="filterCategory('Tonics')">Tonics</button></li>
+                <li><button class="sidebar-cat-link" onclick="filterCategory('Personal Care')">Personal Care</button></li>
+                <li><button class="sidebar-cat-link" onclick="filterCategory('Miscellaneous')">Miscellaneous</button></li>
             </ul>
         </aside>
 
     </div>
 
-    <!-- Sticky Bottom Alert Strip (Matches Blue Banner in Reference Image) -->
+    <!-- Sticky Bottom Alert Strip -->
     <footer class="bottom-alert-banner">
         <span>⚠️ ALL SALES ARE FINAL. NO REFUNDS.</span>
         <button class="dismiss-banner-btn" onclick="this.parentElement.style.display='none'">✖ Dismiss</button>

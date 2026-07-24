@@ -1,88 +1,77 @@
-// Master Database Layer with Completely Double-Quoted Safe Vector Imagery Strings
+// 1. Unified Master Inventory Database with 100% Firewall-Safe Rich Full-Color Inline Vector Layouts
 const initialProducts = [
     {
         id: 1,
+        name: "Afrikan Woman Original Angel Book",
+        myPrice: 44.85,
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='150' height='180' viewBox='0 0 24 24' fill='%23673ab7'><path d='M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm0-4H9V5h10v2z'/></svg>",
+        category: "Books",
+        description: "An deep historical validation text exploring archetypal ancestral lineage parameters."
+    },
+    {
+        id: 2,
+        name: "The Goddess Blackwoman Book",
+        myPrice: 38.85,
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='150' height='180' viewBox='0 0 24 24' fill='%23e91e63'><path d='M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm0-4H9V5h10v2z'/></svg>",
+        category: "Books",
+        description: "12 detailed foundational structural lessons mapped to restore historical identity configurations."
+    },
+    {
+        id: 3,
+        name: "Fit & Flat Belly Tonic",
+        myPrice: 120.00,
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='150' height='180' viewBox='0 0 24 24' fill='%234caf50'><path d='M6 2h12v3H6zm11 4H7c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-5 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z'/></svg>",
+        category: "Tonics",
+        description: "A premium organic botanical fluid matrix engineered to cleanse the digestive track and balance core energy fields."
+    },
+    {
+        id: 4,
+        name: "Brain & Heart Balance Tonic",
+        myPrice: 120.00,
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='150' height='180' viewBox='0 0 24 24' fill='%23ff5722'><path d='M6 2h12v3H6zm11 4H7c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-5 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z'/></svg>",
+        category: "Tonics",
+        description: "A high-vibrational cellular extraction designed to support memory retention, sharpen focus, and fortify heart properties."
+    },
+    {
+        id: 5,
+        name: "Lungs & Liver Cleansing Tonic",
+        myPrice: 120.00,
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='150' height='180' viewBox='0 0 24 24' fill='%2300bcd4'><path d='M6 2h12v3H6zm11 4H7c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-5 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z'/></svg>",
+        category: "Tonics",
+        description: "Deep organic fluid compound formulated to flush metabolic toxicities and expand respiratory baseline capacities."
+    },
+    {
+        id: 6,
         name: "Butterfly Pea Tea",
         myPrice: 45.00,
-        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%232b70c9' stroke-width='1'><circle cx='12' cy='12' r='10'/><path d='M12 8v8M8 12h8'/></svg>",
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='150' height='180' viewBox='0 0 24 24' fill='%232196f3'><path d='M2 21h18v-2H2v2zM20 8h-2V5h2v3zm-4-3v3H4v11h12V5h4c1.1 0 2-.9 2-2V1c0-1.1-.9-2-2-2H2C.9-1 0-.1 0 1v17c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-2V5z'/></svg>",
         category: "Teas",
         description: "Vibrant premium sun-dried blue flower petals designed to boost memory and clear internal channels."
     },
     {
-        id: 2,
-        name: "Irish Sea Moss (Raw)",
+        id: 7,
+        name: "Irish Sea Moss",
         myPrice: 60.00,
-        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%238c7355' stroke-width='1'><path d='M12 2L2 22h20L12 2z'/></svg>",
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='150' height='180' viewBox='0 0 24 24' fill='%23ffc107'><path d='M12 3l10 18H2L12 3z'/></svg>",
         category: "Supplements",
         description: "Organic wildcrafted gold ocean vegetation packed with essential cellular micronutrients."
     },
     {
-        id: 3,
+        id: 8,
         name: "Organic Blue Lotus",
         myPrice: 75.00,
-        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%232b70c9' stroke-width='1'><circle cx='12' cy='12' r='10'/><path d='M12 8v8M8 12h8'/></svg>",
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='150' height='180' viewBox='0 0 24 24' fill='%239c27b0'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>",
         category: "Herbs",
         description: "Sustainably harvested Egyptian Blue Lotus petals to induce somatic calm and support deep meditation."
-    },
-    {
-        id: 4,
-        name: "Soursop Leaves (Dried)",
-        myPrice: 60.00,
-        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%238c7355' stroke-width='1'><path d='M12 2L2 22h20L12 2z'/></svg>",
-        category: "Herbs",
-        description: "Hand-selected premium soursop leaves optimized for clearing toxicities from the blood."
-    },
-    {
-        id: 5,
-        name: "Sea Moss Bulk 5 lb Bag",
-        myPrice: 300.00,
-        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%238c7355' stroke-width='1'><rect x='3' y='3' width='18' height='18' rx='2'/></svg>",
-        category: "Supplements",
-        description: "Master wholesale supply bag of gold raw Irish moss for long-term health sanctuary tracking."
-    },
-    {
-        id: 6,
-        name: "The Advanced Wellness Bundle",
-        myPrice: 510.00,
-        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%238c7355' stroke-width='1'><rect x='3' y='3' width='18' height='18' rx='2'/></svg>",
-        category: "Bundles",
-        description: "Complete strategic multi-bottle premium systemic internal wellness preparation setup tracker."
-    },
-    {
-        id: 7,
-        name: "Red X Tonic",
-        myPrice: 225.00,
-        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%23cc3333' stroke-width='1.5'><path d='M6 3h12v3H6zm2 3h8v13a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2z'/><circle cx='12' cy='13' r='3'/></svg>",
-        category: "Tonics",
-        description: "High-potency spiritual formula calibrated for profound systemic realignments and overall internal strength."
-    },
-    {
-        id: 8,
-        name: "Uterine Fibroid Tonic",
-        myPrice: 120.00,
-        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%238c7355' stroke-width='1.5'><path d='M6 3h12v3H6zm2 3h8v13a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2z'/><circle cx='12' cy='13' r='3'/></svg>",
-        category: "Tonics",
-        description: "Targeted botanical botanical extraction engineered to help balance feminine properties and clear blockages."
-    },
-    {
-        id: 9,
-        name: "Blood & Parasite Cleanse",
-        myPrice: 120.00,
-        image: "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%23111111' stroke-width='1.5'><path d='M6 3h12v3H6zm2 3h8v13a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2z'/><circle cx='12' cy='13' r='3'/></svg>",
-        category: "Tonics",
-        description: "Deep cleansing internal clearing compound designed to completely flush metabolic toxins and impurities."
     }
-];
-
-const defaultReviews = [
-    { name: "Malik K.", rating: 5, text: "The Red X Tonic has completely optimized my energy tracking metrics." },
-    { name: "Elena R.", rating: 5, text: "Excellent execution format on the ordering layout systems." }
 ];
 
 let activeDiscountMultiplier = 1.0; 
 let currentCategoryFilter = "All";
 let currentInventory = JSON.parse(localStorage.getItem('orion_inventory')) || initialProducts;
-let currentReviews = JSON.parse(localStorage.getItem('orion_reviews')) || defaultReviews;
+let currentReviews = JSON.parse(localStorage.getItem('orion_reviews')) || [
+    { name: "Malik K.", rating: 5, text: "The historical literature bundle is unmatched structural excellence." }
+];
 
 function displayHomepageProducts() {
     const productGrid = document.getElementById('products');
@@ -105,8 +94,8 @@ function displayHomepageProducts() {
 
         const productCard = `
             <div class="product-card">
-                <img src="${product.image}" alt="${product.name}" class="product-image" style="background:#fafafa; border-radius:4px; padding:10px;">
-                <h3 class="product-title"><strong>${product.name}</strong></h3>
+                <img src="${product.image}" alt="${product.name}" class="product-image" style="background:#fcfbfa; max-height:160px; padding:5px;">
+                <h3 class="product-title" style="margin-top:10px;"><strong>${product.name}</strong></h3>
                 <p style="font-size: 0.8rem; color: #777; margin-bottom: 10px; line-height:1.3;">${product.description}</p>
                 <p class="product-price">${priceDisplay}</p>
                 <button class="add-to-cart-btn" onclick="redirectToEmail('${product.name}', ${finalPrice})">Order via Email</button>
@@ -179,16 +168,17 @@ if (regForm) {
         const data = { name: document.getElementById('reg-name').value };
         localStorage.setItem('orion_user', JSON.stringify(data));
         alert("Account processing initialized!");
-        document.getElementById('nav-auth-btn').innerText = "Peace, " + data.name.split(' ')[0];
+        document.getElementById('nav-auth-btn').innerText = "Peace, " + data.name.split(' ');
         switchAuthMode('login');
     });
 }
 
 window.onload = function() {
+    // Clear old data cache blocks to force vector graphics generation loop
     localStorage.removeItem('orion_inventory');
     currentInventory = initialProducts;
     
     displayHomepageProducts(); displayCommunityReviews();
     const u = JSON.parse(localStorage.getItem('orion_user'));
-    if (u) document.getElementById('nav-auth-btn').innerText = "Peace, " + u.name.split(' ')[0];
+    if (u) document.getElementById('nav-auth-btn').innerText = "Peace, " + u.name.split(' ');
 };
