@@ -5,7 +5,7 @@ const products = [
         name: "Irish Sea Moss",
         originalPrice: 20.00,
         myPrice: 60.00,
-        image: "https://unsplash.com", // Wellness focus
+        image: "https://unsplash.com",
         category: "Supplements"
     },
     {
@@ -13,7 +13,7 @@ const products = [
         name: "Soursop 7 Archangels",
         originalPrice: 40.00,
         myPrice: 120.00,
-        image: "https://unsplash.com", // Natural apothecary focus
+        image: "https://unsplash.com",
         category: "Supplements"
     },
     {
@@ -21,7 +21,7 @@ const products = [
         name: "The Foundational Wellness Bundle",
         originalPrice: 150.00,
         myPrice: 450.00,
-        image: "https://unsplash.com", // Premium ritual setup
+        image: "https://unsplash.com",
         category: "Bundles"
     },
     {
@@ -29,7 +29,7 @@ const products = [
         name: "Palo Santo Incense",
         originalPrice: 2.00,
         myPrice: 6.00,
-        image: "https://unsplash.com", // Burning aromatherapy focus
+        image: "https://unsplash.com",
         category: "Incense"
     }
 ];
@@ -46,7 +46,7 @@ function displayProducts() {
                     <span class="product-category">${product.category}</span>
                     <h3 class="product-title">${product.name}</h3>
                     <p class="product-price">$${product.myPrice.toFixed(2)}</p>
-                    <button class="add-to-cart-btn" onclick="redirectToWhatsApp('${product.name}', ${product.myPrice})">Order via Chat</button>
+                    <button class="add-to-cart-btn" onclick="redirectToEmail('${product.name}', ${product.myPrice})">Order via Email</button>
                 </div>
             </div>
         `;
@@ -54,17 +54,26 @@ function displayProducts() {
     });
 }
 
-// Function to automatically format and open a direct WhatsApp transaction chat
-function redirectToWhatsApp(productName, price) {
-    const myPhoneNumber = "2348000000000"; // Replace with your real phone number including country code
-    const message = `Hello Orion's Healer! I would like to purchase the following item:\n\n🔮 Product: ${productName}\n💰 Price: $${price.toFixed(2)}\n\nPlease provide payment details so I can finalize my order.`;
+// Function to automatically format and launch a structured Gmail purchase order
+function redirectToEmail(productName, price) {
+    // Put your business email address right here
+    const businessEmail = "orionshealer.shop@gmail.com"; 
     
-    // Encodes characters like spaces and emojis cleanly for browser safety
-    const encodedMessage = encodeURIComponent(message);
-    const whatsAppUrl = `https://wa.me{myPhoneNumber}?text=${encodedMessage}`;
+    // Set a clean, professional subject line
+    const subject = `New Order Request: ${productName} - Orion's Healer`;
     
-    // Redirects user to WhatsApp in a clean window
-    window.open(whatsAppUrl, '_blank');
+    // Build a structured invoice form text for the customer to fill out in their email app
+    const emailBody = `Hello Orion's Healer team,\n\nI would like to place an order for the following spiritual wellness product:\n\n✨ PRODUCT DETAILS:\n-----------------------------\nProduct Name: ${productName}\nUnit Price: $${price.toFixed(2)}\n\n📦 MY SHIPPING DETAILS:\n-----------------------------\nFull Name: \nDelivery Address: \nPhone Number: \n\nPlease reply to this email with your manual payment options (Bank Transfer / Card link) so I can complete my order.\n\nThank you!`;
+    
+    // Convert text blocks cleanly into secure URL characters
+    const encodedSubject = encodeURIComponent(subject);
+    const encodedBody = encodeURIComponent(emailBody);
+    
+    // Build the mail protocol string
+    const mailtoUrl = `mailto:${businessEmail}?subject=${encodedSubject}&body=${encodedBody}`;
+    
+    // Direct the user's browser to execute the email draft launch
+    window.location.href = mailtoUrl;
 }
 
 window.onload = displayProducts;
