@@ -1,58 +1,84 @@
-// 1. Updated Database Master Array (Featuring Your Extracted Reference Products)
+// 1. Updated Catalog Array Featuring Clean, Publicly accessible Image Streams
 const initialProducts = [
     {
         id: 1,
         name: "Butterfly Pea Tea",
-        originalPrice: 15.00,
-        myPrice: 45.00, // 15.00 * 3 markup
-        image: "https://houseofbastet.shop",
+        myPrice: 45.00,
+        image: "https://unsplash.com",
         category: "Teas",
         description: "Vibrant premium sun-dried blue flower petals designed to boost memory and clear internal channels."
     },
     {
         id: 2,
-        name: "Irish Sea Moss",
-        originalPrice: 20.00,
-        myPrice: 60.00, // 20.00 * 3 markup
-        image: "https://houseofbastet.shop",
+        name: "Irish Sea Moss (Raw)",
+        myPrice: 60.00,
+        image: "https://unsplash.com",
         category: "Supplements",
         description: "Organic wildcrafted gold ocean vegetation packed with essential cellular micronutrients."
     },
     {
         id: 3,
         name: "Organic Blue Lotus",
-        originalPrice: 25.00,
-        myPrice: 75.00, // 25.00 * 3 markup
-        image: "https://houseofbastet.shop",
+        myPrice: 75.00,
+        image: "https://unsplash.com",
         category: "Herbs",
         description: "Sustainably harvested Egyptian Blue Lotus petals to induce somatic calm and support deep meditation."
     },
     {
         id: 4,
         name: "Soursop Leaves (Dried)",
-        originalPrice: 20.00,
-        myPrice: 60.00, // Estimated base 20.00 * 3 markup
-        image: "https://houseofbastet.shop",
+        myPrice: 60.00,
+        image: "https://unsplash.com",
         category: "Herbs",
         description: "Hand-selected premium soursop leaves optimized for clearing toxicities from the blood."
     },
     {
         id: 5,
-        name: "Elderberries Whole",
-        originalPrice: 25.00,
-        myPrice: 75.00, // Estimated base 25.00 * 3 markup
-        image: "https://houseofbastet.shop",
-        category: "Herbs",
-        description: "Pure whole elderberries providing structural immune support and natural seasonal protection."
+        name: "Sea Moss Bulk 5 lb Bag",
+        myPrice: 300.00,
+        image: "https://unsplash.com",
+        category: "Supplements",
+        description: "Master wholesale supply bag of gold raw Irish moss for long-term health sanctuary tracking."
     },
     {
         id: 6,
-        name: "Sea Moss 5 lb Bulk Bags",
-        originalPrice: 150.00,
-        myPrice: 300.00, // 150.00 * 2 strategy for bulk pricing safety
-        image: "https://houseofbastet.shop",
+        name: "Giraffe Sculpture",
+        myPrice: 30.00,
+        image: "https://unsplash.com",
+        category: "Miscellaneous",
+        description: "Hand-carved premium wooden giraffe sculpture artifact to anchor grounding earth energies in your space."
+    },
+    {
+        id: 7,
+        name: "African Art Sanctuary Mask",
+        myPrice: 1200.00,
+        image: "https://unsplash.com",
+        category: "Miscellaneous",
+        description: "Authentic, high-vibrational hand-detailed traditional protective ancestral ritual mask sculpture."
+    },
+    {
+        id: 8,
+        name: "Premium Ankh Leather Bag",
+        myPrice: 285.00,
+        image: "https://unsplash.com",
+        category: "Miscellaneous",
+        description: "Hand-crafted custom leather messenger tracking setup featuring the sacred Egyptian key of life emblem."
+    },
+    {
+        id: 9,
+        name: "Pure Premium Manuka Honey",
+        myPrice: 45.00,
+        image: "https://unsplash.com",
         category: "Supplements",
-        description: "Master wholesale supply bag of gold raw Irish moss for long-term health sanctuary tracking."
+        description: "High-potency organic medicinal manuka honey compound for profound gut realignments and immunity."
+    },
+    {
+        id: 10,
+        name: "Sacred Rose Water Distillate",
+        myPrice: 15.00,
+        image: "https://unsplash.com",
+        category: "Personal Care",
+        description: "Pure steam-distilled organic rose water fluid to clear skin properties and elevate mood attributes."
     }
 ];
 
@@ -167,6 +193,10 @@ if (regForm) {
 }
 
 window.onload = function() {
+    // Reset any old hotlinked cache values from browser storage
+    localStorage.removeItem('orion_inventory');
+    currentInventory = initialProducts;
+    
     displayHomepageProducts(); displayCommunityReviews();
     const u = JSON.parse(localStorage.getItem('orion_user'));
     if (u) document.getElementById('nav-auth-btn').innerText = `Peace, ${u.name.split(' ')}`;
